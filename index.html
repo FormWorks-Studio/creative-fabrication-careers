@@ -159,7 +159,7 @@
   .posting-title a:hover { color: var(--accent); }
   .posting-tag {
     font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase;
-    padding: 2px 7px; border-radius: 2px; background: var(--accent-soft); color: var(--accent);
+    padding: 2px 7px; border-radius: 2px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; display: inline-block; margin: 1px 0;
   }
   .posting-tag.coordination { background: var(--stone-soft); color: var(--stone); }
   .posting-tag.cnc { background: var(--black); color: var(--accent-ink); }
@@ -194,8 +194,8 @@
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Creative Fabrication</p>
-    <h1>Technical design, CNC &amp; production jobs at studios that build art, scenic and experiential work.</h1>
-    <p class="lede">Studios like The Factory NYC that fabricate art, sets, experiential environments and architectural features, with careers pages checked for 3D and technical design, CNC and CAM programming, and project and production management roles. Remote roles are rare in this field, so they get their own tab, alongside project-based and freelance roles. Click any company to see its matched postings.</p>
+    <h1>Shop drawing, technical design &amp; CNC jobs across creative fabrication, with remote roles first.</h1>
+    <p class="lede">Studios like The Factory NYC, plus the trades around them where remote shop-drawing work is common: millwork and casework, millwork drafting firms, signage and wayfinding, architectural metals, exhibits and immersive builds. Careers pages are checked for shop drawings and 3D, CNC and CAM, and project and production roles. Remote roles open first; part-time, contract and freelance work has its own tab. Click any company to see its matched postings.</p>
     <div class="stats-row">
       <div class="stat"><b id="stat-companies">0</b><span>Companies scanned</span></div>
       <div class="stat"><b id="stat-with-postings">0</b><span>With matching roles</span></div>
@@ -209,7 +209,7 @@
     <input type="text" id="search" placeholder="Search company, title, or keyword…">
     <div class="chip-group" id="tag-filters">
       <button class="chip active" data-tag="all">All companies</button>
-      <button class="chip" data-tag="digital-modeling">3D + technical design</button>
+      <button class="chip" data-tag="digital-modeling">Shop drawings + 3D</button>
       <button class="chip tag-cnc" data-tag="cnc">CNC + CAM</button>
       <button class="chip tag-coordination" data-tag="coordination">Project + production</button>
       <button class="chip" data-tag="has-postings">Has open roles</button>
@@ -226,7 +226,7 @@
     <button class="tab-btn" data-panel="companies">All Companies</button>
     <button class="tab-btn" data-panel="east">East Coast <span class="tab-count" id="east-tab-count">0</span></button>
     <button class="tab-btn" data-panel="west">West Coast <span class="tab-count" id="west-tab-count">0</span></button>
-    <button class="tab-btn" data-panel="arch">Project-Based + Freelance <span class="tab-count" id="arch-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="arch">Part-Time, Contract + Freelance <span class="tab-count" id="arch-tab-count">0</span></button>
   </div>
 
   <div class="tab-panel" id="panel-companies">
@@ -326,7 +326,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Studios chosen for work like The Factory NYC: art, scenic, experiential, exhibit and architectural fabrication, plus two remote and freelance job boards. Checked October 1, 2026. Postings marked as seen on job boards were not confirmed on the company&rsquo;s own careers page.</p><p>See also <a href="https://formworks-studio.github.io/mass-timber-careers/">Mass Timber Careers</a>.</p>
+    <p>Studios chosen for work like The Factory NYC: art, scenic, experiential, exhibit and architectural fabrication, millwork and casework, signage, and architectural metals, plus two remote and freelance job boards. Checked October 1, 2026. Postings marked as seen on job boards were not confirmed on the company&rsquo;s own careers page.</p><p>See also <a href="https://formworks-studio.github.io/mass-timber-careers/">Mass Timber Careers</a>.</p>
     <p>Job postings change constantly — this is a snapshot from research done when this page was built, not a live feed. Always confirm on the company's own careers page before applying.</p>
   </div>
 </footer>
@@ -340,7 +340,7 @@
   // wins when a posting carries more than one tag and something needs to
   // pick just one, like a card's left-border accent color).
   const TAG_META = {
-    'digital-modeling': { label: '3D + technical design', cls: 'digital-modeling', priority: 0 },
+    'digital-modeling': { label: 'Shop drawings + 3D', cls: 'digital-modeling', priority: 0 },
     'cnc': { label: 'CNC + CAM', cls: 'cnc', priority: 1 },
     'coordination': { label: 'Project + production', cls: 'coordination', priority: 2 },
   };
@@ -556,9 +556,9 @@
   // Project-based, freelance and hybrid roles: the flexible work that's
   // more common in fabrication than fully remote jobs.
   function isFlexRole(p) {
-    return p.flex === true || /project-based|freelance|hybrid|contract/i.test(p.title + ' ' + (p.summary || ''));
+    return p.flex === true || /project-based|freelance|hybrid|contract|part-time|temporary|on-call/i.test(p.title + ' ' + (p.summary || ''));
   }
-  document.getElementById('arch-tab-count').textContent = makeFlatTab('arch', isFlexRole, { hasHq: true, emptyText: 'No project-based or freelance positions found among the currently matched postings.' });
+  document.getElementById('arch-tab-count').textContent = makeFlatTab('arch', isFlexRole, { hasHq: true, emptyText: 'No part-time, contract or freelance positions found among the currently matched postings.' });
 
   function updateStats() {
     const withPostings = COMPANIES.filter(c => (c.postings || []).length > 0).length;

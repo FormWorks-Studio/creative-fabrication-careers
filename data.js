@@ -134,6 +134,95 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     note: "One remote job board has already removed this listing, so it may be closed. Confirm before applying."
   },
 
+  // ── Millwork + casework (shop drawings) ──
+  {
+    name: "Remmert & Company", category: "Millwork + Casework", website: null,
+    hq: "Tuscaloosa, AL (plant in Albany)", careersUrl: "https://www.glassdoor.com/Jobs/Remmert-and-Company-Jobs-E2457074.htm",
+    postings: [
+      { title: "Millwork Production Release Engineer", url: "https://www.indeed.com/q-millwork-engineer-l-remote-jobs.html", tags: ["digital-modeling"], remote: true, summary: "Remote, with a monthly visit to the Albany facility. Releases custom millwork and cabinetry to the plant from architectural and shop drawings. Full-time. $90,000–$120,000." }
+    ],
+    note: "Seen on Indeed and Glassdoor (Sep 2026), not confirmed on a company careers page."
+  },
+  {
+    name: "Washington Woodworking", category: "Millwork + Casework", website: "https://washingtonwoodworking.com/",
+    hq: "Landover, MD", careersUrl: "https://washingtonwoodworking.com/careers/millwork-drafter/",
+    postings: [
+      { title: "Millwork Drafter", url: "https://washingtonwoodworking.com/careers/millwork-drafter/", tags: ["digital-modeling"], remote: true, flex: true, summary: "Landover, MD with hybrid/remote flexibility. Fabrication-ready shop drawings, cut lists and BOMs from architectural drawings. AutoCAD or Microvellum. Full-time; apply to info@washingtonwoodworking.com." }
+    ],
+    note: "Checked 2026-10-01 on the company's own page."
+  },
+  {
+    name: "Giffin Interior & Fixture", category: "Millwork + Casework", website: "https://www.giffininterior.com/",
+    hq: "Bridgeville, PA", careersUrl: "https://www.giffininterior.com/career/millwork-drafter/",
+    postings: [
+      { title: "Millwork Drafter", url: "https://www.giffininterior.com/career/millwork-drafter/", tags: ["digital-modeling"], remote: true, flex: true, summary: "In person, remote or hybrid. Shop drawings and construction documents for custom millwork and store fixtures, RFIs, and revisions. AutoCAD, Microvellum, Innergy. Hourly." }
+    ],
+    note: "Checked 2026-10-01 on the company's own page."
+  },
+  {
+    name: "Trade Custom Cabinets", category: "Millwork + Casework", website: null,
+    hq: "US", careersUrl: "https://www.indeed.com/q-cabinet-vision-drafter-remote-jobs.html",
+    postings: [
+      { title: "Cabinet Vision Drafting Specialist (Part-Time)", url: "https://www.indeed.com/q-cabinet-vision-drafter-remote-jobs.html", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Remote, part-time. Cabinet and millwork drawings and assembly instructions in Cabinet Vision; Rhino, Grasshopper and AutoCAD also listed. $26.00–$31.31/hr." }
+    ],
+    note: "Seen on Indeed (2026), not confirmed on a company careers page."
+  },
+  {
+    name: "Advanced Caseworks", category: "Millwork + Casework", website: null,
+    hq: "US", careersUrl: "https://www.ziprecruiter.com/Jobs/Millwork-Drafting-Remote",
+    postings: [
+      { title: "Millwork Drafter (Temporary)", url: "https://www.ziprecruiter.com/Jobs/Millwork-Drafting-Remote", tags: ["digital-modeling"], remote: true, flex: true, summary: "Remote, temporary. Casework and millwork shop drawings. $18–$22/hr." }
+    ],
+    note: "Seen on job boards (2026), not confirmed on a company careers page."
+  },
+
+  // ── Millwork drafting firms (remote by design) ──
+  {
+    name: "The Millwork Studio", category: "Remote Drafting Firm", website: "https://www.themillworkstudio.com/",
+    hq: "Remote (US)", careersUrl: "https://www.themillworkstudio.com/careers",
+    postings: [
+      { title: "Millwork Designer", url: "https://www.themillworkstudio.com/careers", tags: ["digital-modeling"], remote: true, summary: "Remote. Turns project requirements into build-ready millwork shop drawings for fabricators nationwide. Hiring includes a CAD skills test." },
+      { title: "Studio Excellence Lead", url: "https://www.themillworkstudio.com/careers", tags: ["coordination"], remote: true, summary: "Remote. Manages drawing standards, systems and quality reviews across the studio." }
+    ],
+    note: "Checked 2026-10-01. A shop-drawing service firm: all work is drafting for millwork shops, done remotely."
+  },
+  {
+    name: "CAB.ENG (Cabinet Engineers)", category: "Remote Drafting Firm", website: "https://cabinetengineers.com/",
+    hq: "Remote (US)", careersUrl: "https://cabinetengineers.com/job-opportunities/",
+    postings: [
+      { title: "Millwork Engineer", url: "https://cabinetengineers.com/job-opportunities/", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Remote; part-time, full-time, contract, temporary or on-call. Production-ready shop drawings, BOMs and build packets in Cabinet Vision, including Screen-to-Machine CNC output. Apply with a resume and sample drawings." }
+    ],
+    note: "Checked 2026-10-01. Also hiring project managers and software specialists."
+  },
+
+  // ── Signage + wayfinding ──
+  {
+    name: "Apple Designs", category: "Signage + Wayfinding", website: null,
+    hq: "Raleigh, NC", careersUrl: "https://www.ziprecruiter.com/Jobs/Remote-Revit-Drafter",
+    postings: [
+      { title: "Signage & Wayfinding Specialist / Revit Drafter", url: "https://www.ziprecruiter.com/Jobs/Remote-Revit-Drafter", tags: ["digital-modeling"], remote: true, summary: "Remote, anywhere in the US, with occasional trips to Raleigh or sites. Revit models, sign location plans, message schedules, construction documents and shop drawings. $65,000–$85,000." }
+    ],
+    note: "Seen on job boards (2026), not confirmed on a company careers page."
+  },
+  {
+    name: "Raydeo Enterprises", category: "Signage + Wayfinding", website: null,
+    hq: "Ball Ground, GA", careersUrl: "https://www.glassdoor.com/Job/ball-ground-raydeo-enterprises-inc-jobs-SRCH_IL.0,11_IC1155587_KO12,34.htm",
+    postings: [
+      { title: "CAD Drafter (Microvellum)", url: "https://www.indeed.com/q-microvellum-drafter-l-remote-jobs.html", tags: ["digital-modeling"], remote: true, summary: "Remote. Drafting for commercial millwork, metalwork, signage, awnings and architectural rails. AutoCAD, SolidWorks, Microvellum. $30–$40/hr." }
+    ],
+    note: "Seen on Indeed and Glassdoor (2026), not confirmed on a company careers page."
+  },
+
+  // ── Architectural + ornamental metals ──
+  {
+    name: "RDS Industrial", category: "Architectural + Ornamental Metals", website: null,
+    hq: "Cocoa, FL", careersUrl: "https://www.indeed.com/viewjob?jk=245a8fb19e564adc",
+    postings: [
+      { title: "Miscellaneous Metals / Stair / Railing Draftsman", url: "https://www.indeed.com/viewjob?jk=245a8fb19e564adc", tags: ["digital-modeling"], summary: "Cocoa, FL, on site. Shop drawings for stairs, railings, gates, canopies and miscellaneous metals. $25–$35/hr." }
+    ],
+    note: "On site, but a good example of metals shop-drawing work; remote railing detailing is more often freelance (see Cad Crowd)."
+  },
+
   // ── Remote / freelance channels ──
   {
     name: "Cad Crowd", category: "Remote + Freelance Board", website: "https://www.cadcrowd.com/",
