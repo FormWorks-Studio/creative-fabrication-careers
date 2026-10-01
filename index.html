@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creative Fabrication Careers</title>
+<meta name="description" content="Creative fabrication studios like The Factory NYC, with careers pages checked for 3D and technical design, CNC + CAM, and project and production roles, with remote and freelance roles pulled out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Light, sleek palette: warm white ground, near-black ink, rust accent.
+     Tag colors: digital modeling = rust, architectural designer = black,
+     coordination = stone. */
+  :root {
+    color-scheme: light;
+    --ground: #FBFAF7;
+    --surface: #FFFFFF;
+    --row-alt: #F7F5F0;
+    --ink: #141210;
+    --ink-soft: #5C554D;
+    --ink-faint: #9A928A;
+    --line: #ECE8E1;
+    --line-strong: #D9D3C9;
+    --accent: #B4441C;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #F8E9E1;
+    --stone: #7A7168;
+    --stone-soft: #EFECE7;
+    --black: #141210;
+    --black-soft: #E9E7E4;
+    --shadow: rgba(20, 18, 16, 0.05);
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-size: 14.5px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2 { font-family: 'Inter', system-ui, sans-serif; font-weight: 300; margin: 0; text-wrap: balance; letter-spacing: -0.025em; }
+  p { margin: 0; }
+  a { color: inherit; }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .mono { font-family: 'IBM Plex Mono', Consolas, monospace; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { border-bottom: 1px solid var(--line); padding: 64px 0 40px; border-top: 4px solid var(--black); }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ""; width: 10px; height: 10px; background: var(--accent); display: inline-block; }
+  header.hero h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.04; margin-top: 18px; max-width: 20ch; color: var(--ink); }
+  header.hero p.lede { margin-top: 18px; max-width: 70ch; font-size: 15.5px; color: var(--ink-soft); }
+
+  .stats-row { display: flex; gap: 48px; flex-wrap: wrap; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .stat b { display: block; font-family: 'Inter', sans-serif; font-size: 34px; font-weight: 200; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
+  .stat:first-child b { color: var(--accent); }
+  .stat span { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+
+  .controls {
+    position: sticky; top: 0; z-index: 5; background: rgba(251, 250, 247, 0.9);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+    padding: 14px 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+  }
+  #search {
+    flex: 1 1 220px; min-width: 180px; background: var(--surface); border: 1px solid var(--line-strong);
+    border-radius: 2px; padding: 10px 13px; color: var(--ink); font-family: inherit; font-size: 13.5px;
+    transition: border-color 0.15s;
+  }
+  #search::placeholder { color: var(--ink-faint); }
+  #search:focus { outline: none; border-color: var(--ink); }
+
+  .chip-group { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.03em; padding: 7px 13px; border-radius: 999px;
+    border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-soft); cursor: pointer; white-space: nowrap;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
+  .chip.active { background: var(--black); color: var(--accent-ink); border-color: var(--black); }
+  .chip.active[data-tag="digital-modeling"] { background: var(--accent); border-color: var(--accent); }
+  .chip.active.tag-coordination { background: var(--stone); color: var(--accent-ink); border-color: var(--stone); }
+  .chip.active.tag-cnc { background: var(--black); color: var(--accent-ink); border-color: var(--black); }
+
+  #category-select {
+    background: var(--surface); border: 1px solid var(--line-strong); border-radius: 2px;
+    padding: 9px 10px; color: var(--ink); font-family: inherit; font-size: 12.5px; cursor: pointer;
+  }
+
+  .tab-bar { display: flex; gap: 20px; border-bottom: 1px solid var(--line); margin-top: 4px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+  .tab-btn {
+    flex-shrink: 0; white-space: nowrap;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    background: none; border: none; border-bottom: 2px solid transparent; color: var(--ink-faint);
+    padding: 12px 0; margin-bottom: -1px; cursor: pointer; transition: color 0.15s;
+  }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+  .tab-btn .tab-count {
+    display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px;
+    background: var(--black-soft); color: var(--ink-soft); font-size: 10.5px; letter-spacing: 0;
+  }
+  .tab-btn.active .tab-count { background: var(--accent); color: var(--accent-ink); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  main { padding: 28px 0 80px; }
+  #result-count, [id$="-result-count"] { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-faint); margin: 18px 0 14px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); box-shadow: 0 1px 3px var(--shadow); }
+  table { width: 100%; border-collapse: collapse; min-width: 880px; }
+  thead th {
+    position: sticky; top: 0; z-index: 2;
+    text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-soft); background: var(--surface); padding: 14px 16px; border-bottom: 1px solid var(--ink);
+    cursor: pointer; white-space: nowrap; user-select: none;
+  }
+  thead th:hover { color: var(--accent); }
+  thead th .sort-arrow { margin-left: 4px; opacity: 0.4; }
+  thead th.sorted { color: var(--ink); }
+  thead th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+
+  tbody tr.company-row { border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.12s; }
+  tbody tr.company-row:hover { background: var(--accent-soft); }
+  tbody td { padding: 13px 16px; vertical-align: top; }
+
+  .cell-name { font-weight: 600; letter-spacing: -0.005em; min-width: 220px; }
+  .cell-name .expand-caret { display: inline-block; width: 14px; color: var(--ink-faint); transition: transform 0.15s, color 0.15s; }
+  tr.is-open .expand-caret { transform: rotate(90deg); color: var(--accent); }
+  tr.company-row.is-open { background: var(--row-alt); }
+  .cell-category { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
+  .cell-hq { color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
+  .cell-link a { text-decoration: none; border-bottom: 1px solid var(--line-strong); padding-bottom: 1px; font-size: 13px; white-space: nowrap; transition: color 0.15s, border-color 0.15s; }
+  .cell-link a:hover { color: var(--accent); border-color: var(--accent); }
+  .cell-link .none { color: var(--ink-faint); font-size: 13px; }
+
+  .postings-badge {
+    display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+  }
+  .postings-count { min-width: 26px; text-align: center; padding: 2px 8px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 500; }
+  .postings-count.zero { background: transparent; color: var(--ink-faint); }
+  .tag-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .tag-dot.digital-modeling { background: var(--accent); }
+  .tag-dot.coordination { background: var(--stone); }
+  .tag-dot.cnc { background: var(--black); }
+
+  tr.detail-row { display: none; }
+  tr.detail-row.is-open { display: table-row; }
+  tr.detail-row td { padding: 2px 16px 18px 46px; background: var(--row-alt); border-bottom: 1px solid var(--line); }
+  .postings-list { display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
+  .posting { border-left: 2px solid var(--accent); padding: 4px 0 4px 14px; }
+  .posting.coordination-only { border-left-color: var(--stone); }
+  .posting.cnc-only { border-left-color: var(--black); }
+  .posting-title-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .posting-title { font-weight: 600; font-size: 13.5px; }
+  .posting-title a { text-decoration: none; }
+  .posting-title a:hover { color: var(--accent); }
+  .posting-tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 2px; background: var(--accent-soft); color: var(--accent);
+  }
+  .posting-tag.coordination { background: var(--stone-soft); color: var(--stone); }
+  .posting-tag.cnc { background: var(--black); color: var(--accent-ink); }
+  .posting-summary { margin-top: 3px; font-size: 13px; color: var(--ink-soft); max-width: 72ch; }
+  .no-postings-note { padding-top: 6px; font-size: 13px; color: var(--ink-faint); }
+
+  tbody tr.remote-row { border-bottom: 1px solid var(--line); transition: background 0.12s; }
+  tbody tr.remote-row:hover { background: var(--accent-soft); }
+  .remote-title a { text-decoration: none; font-weight: 600; }
+  .remote-title a:hover { color: var(--accent); }
+  .remote-company { color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
+  .remote-hq { color: var(--ink-soft); font-size: 13px; max-width: 22ch; }
+  .remote-summary { color: var(--ink-soft); font-size: 13px; max-width: 52ch; }
+  .empty-note { padding: 40px 14px; text-align: center; color: var(--ink-faint); font-size: 13.5px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--ink-faint); font-size: 12.5px; }
+  footer a { color: var(--ink-soft); text-decoration-color: var(--line-strong); }
+  footer a:hover { color: var(--accent); }
+  footer p + p { margin-top: 6px; }
+
+  @media (max-width: 720px) {
+    header.hero { padding: 44px 0 30px; }
+    .stats-row { gap: 24px; }
+    .stat b { font-size: 28px; }
+    .cell-hq { display: none; }
+    tr.detail-row td { padding-left: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Creative Fabrication</p>
+    <h1>Technical design, CNC &amp; production jobs at studios that build art, scenic and experiential work.</h1>
+    <p class="lede">Studios like The Factory NYC that fabricate art, sets, experiential environments and architectural features, with careers pages checked for 3D and technical design, CNC and CAM programming, and project and production management roles. Remote roles are rare in this field, so they get their own tab, alongside project-based and freelance roles. Click any company to see its matched postings.</p>
+    <div class="stats-row">
+      <div class="stat"><b id="stat-companies">0</b><span>Companies scanned</span></div>
+      <div class="stat"><b id="stat-with-postings">0</b><span>With matching roles</span></div>
+      <div class="stat"><b id="stat-postings">0</b><span>Matching postings</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; width:100%;">
+    <input type="text" id="search" placeholder="Search company, title, or keyword…">
+    <div class="chip-group" id="tag-filters">
+      <button class="chip active" data-tag="all">All companies</button>
+      <button class="chip" data-tag="digital-modeling">3D + technical design</button>
+      <button class="chip tag-cnc" data-tag="cnc">CNC + CAM</button>
+      <button class="chip tag-coordination" data-tag="coordination">Project + production</button>
+      <button class="chip" data-tag="has-postings">Has open roles</button>
+    </div>
+    <select id="category-select">
+      <option value="all">All categories</option>
+    </select>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-panel="remote">Remote Positions <span class="tab-count" id="remote-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="companies">All Companies</button>
+    <button class="tab-btn" data-panel="east">East Coast <span class="tab-count" id="east-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="west">West Coast <span class="tab-count" id="west-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="arch">Project-Based + Freelance <span class="tab-count" id="arch-tab-count">0</span></button>
+  </div>
+
+  <div class="tab-panel" id="panel-companies">
+    <p id="result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-key="name">Company <span class="sort-arrow">↕</span></th>
+            <th data-key="category">Category <span class="sort-arrow">↕</span></th>
+            <th data-key="hq">HQ / Region <span class="sort-arrow">↕</span></th>
+            <th data-key="website">Website</th>
+            <th data-key="careersUrl">Careers</th>
+            <th data-key="postings">Matching Roles <span class="sort-arrow">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tab-panel active" id="panel-remote">
+    <p id="remote-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Company <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th>Posting</th>
+          </tr>
+        </thead>
+        <tbody id="remote-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-east">
+    <p id="east-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Company <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="hq">HQ <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th>Posting</th>
+          </tr>
+        </thead>
+        <tbody id="east-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-west">
+    <p id="west-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Company <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="hq">HQ <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th>Posting</th>
+          </tr>
+        </thead>
+        <tbody id="west-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-arch">
+    <p id="arch-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Company <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="hq">HQ <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th>Posting</th>
+          </tr>
+        </thead>
+        <tbody id="arch-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Studios chosen for work like The Factory NYC: art, scenic, experiential, exhibit and architectural fabrication, plus two remote and freelance job boards. Checked October 1, 2026. Postings marked as seen on job boards were not confirmed on the company&rsquo;s own careers page.</p><p>See also <a href="https://formworks-studio.github.io/mass-timber-careers/">Mass Timber Careers</a>.</p>
+    <p>Job postings change constantly — this is a snapshot from research done when this page was built, not a live feed. Always confirm on the company's own careers page before applying.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const COMPANIES = window.__CREATIVE_FAB_COMPANIES__ || [];
+
+  // Shared tag metadata — label, dot/badge class, and priority (lower =
+  // wins when a posting carries more than one tag and something needs to
+  // pick just one, like a card's left-border accent color).
+  const TAG_META = {
+    'digital-modeling': { label: '3D + technical design', cls: 'digital-modeling', priority: 0 },
+    'cnc': { label: 'CNC + CAM', cls: 'cnc', priority: 1 },
+    'coordination': { label: 'Project + production', cls: 'coordination', priority: 2 },
+  };
+  function primaryTagClass(tags) {
+    const present = (tags || []).filter(t => TAG_META[t]).sort((a, b) => TAG_META[a].priority - TAG_META[b].priority);
+    if (!present.length || present[0] === 'digital-modeling') return '';
+    return ' ' + TAG_META[present[0]].cls + '-only';
+  }
+
+  const tbody = document.getElementById('table-body');
+  const countEl = document.getElementById('result-count');
+  const searchEl = document.getElementById('search');
+  const categorySelect = document.getElementById('category-select');
+  const tagButtons = Array.from(document.querySelectorAll('#tag-filters .chip'));
+  const headers = Array.from(document.querySelectorAll('thead th[data-key]'));
+  let activeTag = 'all';
+  let sortKey = 'postings';
+  let sortDir = -1; // -1 desc, 1 asc
+  const openRows = new Set();
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // Populate category dropdown from actual data
+  const categories = Array.from(new Set(COMPANIES.map(c => c.category).filter(Boolean))).sort();
+  categories.forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat; opt.textContent = cat;
+    categorySelect.appendChild(opt);
+  });
+
+  function postingMatchesTag(p, tag) {
+    if (tag === 'all' || tag === 'has-postings') return true;
+    return (p.tags || []).includes(tag);
+  }
+  function companyMatchesTag(c, tag) {
+    if (tag === 'all') return true;
+    if (tag === 'has-postings') return (c.postings || []).length > 0;
+    return (c.postings || []).some(p => (p.tags || []).includes(tag));
+  }
+  function companyMatchesSearch(c, q) {
+    if (!q) return true;
+    const hay = [c.name, c.hq, c.category, ...(c.postings || []).map(p => p.title + ' ' + (p.summary || ''))].join(' ').toLowerCase();
+    return hay.includes(q);
+  }
+
+  function render() {
+    const q = searchEl.value.trim().toLowerCase();
+    const cat = categorySelect.value;
+    let filtered = COMPANIES.filter(c =>
+      companyMatchesTag(c, activeTag) &&
+      companyMatchesSearch(c, q) &&
+      (cat === 'all' || c.category === cat)
+    );
+
+    filtered = filtered.slice().sort((a, b) => {
+      let av, bv;
+      if (sortKey === 'postings') { av = (a.postings || []).length; bv = (b.postings || []).length; }
+      else { av = (a[sortKey] || '').toString().toLowerCase(); bv = (b[sortKey] || '').toString().toLowerCase(); }
+      if (av < bv) return -1 * sortDir;
+      if (av > bv) return 1 * sortDir;
+      return a.name.localeCompare(b.name);
+    });
+
+    countEl.textContent = `${filtered.length} of ${COMPANIES.length} companies`;
+
+    tbody.innerHTML = filtered.map((c, i) => {
+      const postings = (c.postings || []).filter(p => postingMatchesTag(p, activeTag));
+      const isOpen = openRows.has(c.name);
+      const rowId = 'row-' + i;
+
+      const websiteCell = c.website ? `<a href="${escapeHtml(c.website)}" target="_blank" rel="noopener">Site ↗</a>` : `<span class="none">—</span>`;
+      const careersCell = c.careersUrl ? `<a href="${escapeHtml(c.careersUrl)}" target="_blank" rel="noopener">Careers ↗</a>` : `<span class="none">—</span>`;
+
+      const dots = Object.keys(TAG_META)
+        .filter(t => postings.some(p => (p.tags || []).includes(t)))
+        .map(t => `<span class="tag-dot ${TAG_META[t].cls}" title="${TAG_META[t].label}"></span>`)
+        .join('');
+
+      const detailContent = postings.length
+        ? `<div class="postings-list">${postings.map(p => `
+            <div class="posting${primaryTagClass(p.tags)}">
+              <div class="posting-title-row">
+                <span class="posting-title">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>` : escapeHtml(p.title)}</span>
+                ${(p.tags || []).filter(t => TAG_META[t]).map(t => `<span class="posting-tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join('')}
+              </div>
+              ${p.summary ? `<p class="posting-summary">${escapeHtml(p.summary)}</p>` : ''}
+            </div>
+          `).join('')}</div>`
+        : `<p class="no-postings-note">${escapeHtml(c.note || 'No current openings in technical design, CNC + CAM, or project and production roles listed.')}</p>`;
+
+      return `
+        <tr class="company-row${isOpen ? ' is-open' : ''}" data-name="${escapeHtml(c.name)}">
+          <td class="cell-name"><span class="expand-caret">▸</span>${escapeHtml(c.name)}</td>
+          <td class="cell-category">${escapeHtml(c.category || '—')}</td>
+          <td class="cell-hq">${escapeHtml(c.hq || '—')}</td>
+          <td class="cell-link">${websiteCell}</td>
+          <td class="cell-link">${careersCell}</td>
+          <td><span class="postings-badge"><span class="postings-count${postings.length ? '' : ' zero'}">${postings.length}</span>${dots}</span></td>
+        </tr>
+        <tr class="detail-row${isOpen ? ' is-open' : ''}"><td colspan="6">${detailContent}</td></tr>
+      `;
+    }).join('');
+
+    Array.from(tbody.querySelectorAll('tr.company-row')).forEach(row => {
+      row.addEventListener('click', () => {
+        const name = row.dataset.name;
+        const detail = row.nextElementSibling;
+        const nowOpen = !row.classList.contains('is-open');
+        row.classList.toggle('is-open', nowOpen);
+        detail.classList.toggle('is-open', nowOpen);
+        if (nowOpen) openRows.add(name); else openRows.delete(name);
+      });
+    });
+  }
+
+  // ── Flat position tabs (Remote / East Coast / West Coast) — each
+  // flattens every posting across every company and isolates a subset,
+  // sharing one render/sort implementation since they're the same table
+  // shape with a different filter.
+  function isRemote(p) {
+    if (typeof p.remote === 'boolean') return p.remote;
+    const hay = (p.title + ' ' + (p.summary || '')).toLowerCase();
+    return /\bremote\b/.test(hay);
+  }
+
+  // Coast is inferred from the company's own HQ text (first "City, ST"
+  // found in it) against real Pacific/Atlantic-coastal states — Canadian
+  // provinces, international HQs, and inland US states all correctly fall
+  // through to neither tab, since their 2-letter codes aren't in the sets
+  // below. New England is grouped into "east" the way the term is
+  // ordinarily used day to day, not strictly by which states touch salt
+  // water.
+  const EAST_STATES = new Set(['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NY', 'NJ', 'PA', 'DE', 'MD', 'DC', 'VA', 'NC', 'SC', 'GA', 'FL']);
+  const WEST_STATES = new Set(['WA', 'OR', 'CA']);
+  function usCoast(hq) {
+    if (!hq) return null;
+    const m = hq.match(/,\s*([A-Z]{2})\b/);
+    if (!m) return null;
+    if (EAST_STATES.has(m[1])) return 'east';
+    if (WEST_STATES.has(m[1])) return 'west';
+    return null;
+  }
+
+  const ALL_FLAT_POSTINGS = [];
+  COMPANIES.forEach(c => {
+    const coast = usCoast(c.hq);
+    (c.postings || []).forEach(p => {
+      ALL_FLAT_POSTINGS.push({ ...p, company: c.name, hq: c.hq, category: c.category, coast, remote: isRemote(p) });
+    });
+  });
+
+  function makeFlatTab(key, filterFn, opts) {
+    const tbody = document.getElementById(key + '-table-body');
+    const countEl = document.getElementById(key + '-result-count');
+    const panel = document.getElementById('panel-' + key);
+    let localSortKey = 'title';
+    let localSortDir = 1;
+
+    function render() {
+      const rows = ALL_FLAT_POSTINGS.filter(filterFn).slice().sort((a, b) => {
+        let av, bv;
+        if (localSortKey === 'tags') { av = (a.tags || []).join(','); bv = (b.tags || []).join(','); }
+        else { av = (a[localSortKey] || '').toString().toLowerCase(); bv = (b[localSortKey] || '').toString().toLowerCase(); }
+        if (av < bv) return -1 * localSortDir;
+        if (av > bv) return 1 * localSortDir;
+        return a.title.localeCompare(b.title);
+      });
+
+      countEl.textContent = `${rows.length} position${rows.length === 1 ? '' : 's'}`;
+      const colCount = opts.hasHq ? 6 : 5;
+
+      tbody.innerHTML = rows.length ? rows.map(p => `
+        <tr class="remote-row">
+          <td class="remote-title">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>` : escapeHtml(p.title)}</td>
+          <td class="remote-company">${escapeHtml(p.company)}</td>
+          ${opts.hasHq ? `<td class="remote-hq">${escapeHtml(p.hq || '—')}</td>` : ''}
+          <td>${(p.tags || []).filter(t => TAG_META[t]).map(t => `<span class="posting-tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join(' ')}</td>
+          <td class="remote-summary">${escapeHtml(p.summary || '')}</td>
+          <td class="cell-link">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Open ↗</a>` : `<span class="none">—</span>`}</td>
+        </tr>
+      `).join('') : `<tr><td colspan="${colCount}" class="empty-note">${opts.emptyText}</td></tr>`;
+    }
+
+    Array.from(panel.querySelectorAll('th[data-flat-key]')).forEach(th => {
+      th.addEventListener('click', () => {
+        const k = th.dataset.flatKey;
+        if (k === localSortKey) localSortDir *= -1;
+        else { localSortKey = k; localSortDir = 1; }
+        panel.querySelectorAll('th[data-flat-key]').forEach(h => h.classList.toggle('sorted', h === th));
+        render();
+      });
+    });
+
+    render();
+    return ALL_FLAT_POSTINGS.filter(filterFn).length;
+  }
+
+  const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+    });
+  });
+
+  document.getElementById('remote-tab-count').textContent = makeFlatTab('remote', p => p.remote, { hasHq: false, emptyText: 'No remote positions found among the currently matched postings.' });
+  document.getElementById('east-tab-count').textContent = makeFlatTab('east', p => p.coast === 'east', { hasHq: true, emptyText: 'No East Coast positions found among the currently matched postings.' });
+  document.getElementById('west-tab-count').textContent = makeFlatTab('west', p => p.coast === 'west', { hasHq: true, emptyText: 'No West Coast positions found among the currently matched postings.' });
+
+  // Project-based, freelance and hybrid roles: the flexible work that's
+  // more common in fabrication than fully remote jobs.
+  function isFlexRole(p) {
+    return p.flex === true || /project-based|freelance|hybrid|contract/i.test(p.title + ' ' + (p.summary || ''));
+  }
+  document.getElementById('arch-tab-count').textContent = makeFlatTab('arch', isFlexRole, { hasHq: true, emptyText: 'No project-based or freelance positions found among the currently matched postings.' });
+
+  function updateStats() {
+    const withPostings = COMPANIES.filter(c => (c.postings || []).length > 0).length;
+    const totalPostings = COMPANIES.reduce((sum, c) => sum + (c.postings || []).length, 0);
+    document.getElementById('stat-companies').textContent = COMPANIES.length;
+    document.getElementById('stat-with-postings').textContent = withPostings;
+    document.getElementById('stat-postings').textContent = totalPostings;
+  }
+
+  headers.forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.key;
+      if (key === sortKey) sortDir *= -1;
+      else { sortKey = key; sortDir = key === 'postings' ? -1 : 1; }
+      headers.forEach(h => h.classList.toggle('sorted', h === th));
+      render();
+    });
+  });
+  tagButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeTag = btn.dataset.tag;
+      tagButtons.forEach(b => b.classList.toggle('active', b === btn));
+      render();
+    });
+  });
+  searchEl.addEventListener('input', render);
+  categorySelect.addEventListener('change', render);
+
+  updateStats();
+  render();
+})();
+</script>
+</body>
+</html>
