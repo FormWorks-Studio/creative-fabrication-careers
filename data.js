@@ -288,6 +288,64 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     note: "Checked 2026-10-01 (237 open roles). Online manufacturing marketplace for 3D printing, laser cutting, CNC and sheet metal; no remote design roles right now."
   },
 
+  // ── More Rhino roles (forum, remote boards, AEC software, product design) ──
+  {
+    name: "American Marine", category: "Rhino + Grasshopper", website: null,
+    hq: "South Florida, FL", careersUrl: "https://discourse.mcneel.com/t/rhino-3d-digital-fabrication-specialist-south-florida/222294",
+    postings: [
+      { title: "Rhino 3D / Digital Fabrication Specialist", url: "https://discourse.mcneel.com/t/rhino-3d-digital-fabrication-specialist-south-florida/222294", tags: ["digital-modeling", "cnc"], summary: "South Florida, full-time, on site. Custom yacht canvas and upholstery: measure onboard, build geometry in Rhino, develop patterns in ExactFlat/Proliner and prep production files. Will train. Posted Sep 1, 2026." }
+    ],
+    note: "Posted on the McNeel (Rhino) forum."
+  },
+  {
+    name: "South Texas Canvas", category: "Rhino + Grasshopper", website: "https://southtexascanvas.net/",
+    hq: "South Texas, TX", careersUrl: "https://discourse.mcneel.com/t/now-hiring-design-production-manager-for-canvas-shop/222731",
+    postings: [
+      { title: "Design / Production Manager", url: "https://discourse.mcneel.com/t/now-hiring-design-production-manager-for-canvas-shop/222731", tags: ["coordination", "digital-modeling"], summary: "Full-time, in house. Modernize design and production for shade structures, awnings and signage and bring in Rhino. Contact jay@southtexascanvas.net. Posted Sep 15, 2026." }
+    ],
+    note: "Posted on the McNeel (Rhino) forum."
+  },
+  {
+    name: "Dusty Strings", category: "Rhino + Grasshopper", website: "https://manufacturing.dustystrings.com/",
+    hq: "Seattle, WA", careersUrl: "https://manufacturing.dustystrings.com/about-us/employment",
+    postings: [
+      { title: "Harp & Dulcimer Maker (Rhino)", url: "https://manufacturing.dustystrings.com/about-us/employment", tags: ["digital-modeling"], summary: "Seattle, WA, on site. Instrument building with Rhino experience highly desired. Posted Jul 17, 2026." }
+    ],
+    note: "Posted on the McNeel (Rhino) forum; full details on their employment page."
+  },
+  {
+    name: "CLT Computational Design Startup", category: "Rhino + Grasshopper", website: "https://skeleton.deeptechfomo.com/",
+    hq: "Palo Alto, CA", careersUrl: "https://discourse.mcneel.com/t/clt-panel-layout-across-6-envelopes/221585",
+    postings: [
+      { title: "Computational Designer (CLT)", url: "https://discourse.mcneel.com/t/clt-panel-layout-across-6-envelopes/221585", tags: ["digital-modeling"], summary: "Palo Alto, CA. One seat; salary plus equity. You apply by solving a Grasshopper challenge on CLT floor-panel layout with structural and fabrication rules instead of sending a CV. Posted Aug 7, 2026." }
+    ],
+    note: "Posted on the McNeel (Rhino) forum. A close match for a mass timber and Grasshopper background."
+  },
+  {
+    name: "Speckle", category: "AEC Software", website: "https://speckle.systems/",
+    hq: "Remote (US and EU)", careersUrl: "https://jobs.ashbyhq.com/speckle",
+    postings: [
+      { title: "Solution Architect", url: "https://jobs.ashbyhq.com/speckle/2f914da8-61a7-444b-9c43-5487d3f2100d", tags: ["coordination"], remote: true, summary: "Remote (USA). Helps AEC customers set up Speckle, the data platform that connects Rhino, Grasshopper, Revit and other design tools." }
+    ],
+    note: "Checked 2026-10-01 on Speckle's own job board."
+  },
+  {
+    name: "TH Experiential", category: "Exhibit + Experience Design-Build", website: null,
+    hq: "Remote (US)", careersUrl: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/",
+    postings: [
+      { title: "Senior 3D Experiential Designer", url: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/", tags: ["digital-modeling"], remote: true, summary: "Remote, US. Spatial concepts, floor plans, elevations, 3D models and renderings for brand activations; manages fabrication vendors and installs. SketchUp, Rhino or 3ds Max. 2–6+ years." }
+    ],
+    note: "Seen on remote job boards (2026), not confirmed on a company careers page."
+  },
+  {
+    name: "Ferguson", category: "Product + Industrial Design", website: "https://www.ferguson.com/",
+    hq: "Newport News, VA", careersUrl: "https://himalayas.app/companies/ferguson-com/jobs/lighting-fan-designer-own-brand-lighting-team-at-ferguson",
+    postings: [
+      { title: "Lighting & Fan Designer, Own Brand Lighting", url: "https://himalayas.app/companies/ferguson-com/jobs/lighting-fan-designer-own-brand-lighting-team-at-ferguson", tags: ["digital-modeling"], remote: true, summary: "Remote, US. Designs decorative and architectural lighting and ceiling-fan collections from concept to production: CAD models, technical drawings, spec packages. SolidWorks, Rhino, Adobe. 3–5+ years. Est. $76,496–$125,400." }
+    ],
+    note: "Seen on remote job boards (2026), not confirmed on Ferguson's own careers site."
+  },
+
   // ── Remote / freelance channels ──
   {
     name: "Upwork", category: "Remote + Freelance Board", website: "https://www.upwork.com/",
@@ -298,8 +356,15 @@ window.__CREATIVE_FAB_COMPANIES__ = [
   {
     name: "McNeel Jobs & Portfolios Forum", category: "Remote + Freelance Board", website: "https://discourse.mcneel.com/",
     hq: "Remote", careersUrl: "https://discourse.mcneel.com/c/jobs-portfolios/35",
-    postings: [],
-    note: "The Rhino developer's own forum, where studios post Rhino and Grasshopper roles, many of them remote or contract. You can also post your portfolio here."
+    postings: [
+      { title: "Rhino/Grasshopper Detailer – Curved FRP Windows & Doors", url: "https://discourse.mcneel.com/t/hiring-rhino-grasshopper-detailer/223154", tags: ["digital-modeling"], remote: true, flex: true, summary: "Consultant. Rationalize and detail ~1,000 sf of curved glass windows and doors set into a fiberglass-over-foam wall: geometry rationalization, waterproofing details, fabrication-ready drawings. Advanced Rhino; Grasshopper preferred. Posted Sep 30, 2026, no replies yet." },
+      { title: "Parametric Bargeboard Generator (UK joinery shop)", url: "https://discourse.mcneel.com/t/paid-parametric-bargeboard-generator-for-a-uk-joinery-workshop/222036", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Paid freelance. A Grasshopper tool that generates decorative timber bargeboards from a few dimensions and outputs SVG/DXF cutting files and a setting-out schedule. Posted Aug 21, 2026." },
+      { title: "Fiberglass Panel Cutting Stencils", url: "https://discourse.mcneel.com/t/rhino-grasshopper-specialist-needed-for-full-scale-cardboard-stencil/221591", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Paid commission after a test piece. Flatten double-curved fiberglass panels into 1:1 cardboard stencils with registration marks; UnrollSrf, Squish, Grasshopper; DXF output. Posted Aug 7, 2026." },
+      { title: "3D-Printed Casting Shell Automation", url: "https://discourse.mcneel.com/t/grasshopper-job/221415", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Freelance. Grasshopper workflow that builds 3D-printed investment-casting shells from STEP parts: variable shell, split line, lugs, cores. Posted Aug 3, 2026." },
+      { title: "SLS-Printed Voronoi Lattice (loudspeaker)", url: "https://discourse.mcneel.com/t/grasshopper-expert-for-3d-voronoi-structure/222759", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Freelance. Grasshopper script for an adjustable 3D Voronoi lattice, watertight for SLS printing in PA12. Posted Sep 16, 2026." },
+      { title: "Grasshopper + Kangaroo Simulation (Freelance)", url: "https://discourse.mcneel.com/t/looking-for-grasshopper-kangaroo-expert-freelance/221250", tags: ["digital-modeling"], remote: true, flex: true, summary: "Paid, fully remote, ongoing. Kangaroo physics and equilibrium for a suspended system. Posted Jul 28, 2026." }
+    ],
+    note: "The Rhino developer's own forum. Gigs listed here were read in full on 2026-10-01; posts with several replies may already be filled. You can also post your own portfolio here."
   },
   {
     name: "Cad Crowd", category: "Remote + Freelance Board", website: "https://www.cadcrowd.com/",
