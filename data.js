@@ -1,5 +1,5 @@
 // Creative fabrication studios and their open roles. Checked 2026-10-01.
-// Tags: digital-modeling = 3D / technical design, cnc = CNC + CAM,
+// Tags: digital-modeling = shop drawings + 3D, cnc = CNC, laser + 3D printing,
 // coordination = project + production management.
 // remote: true = fully remote; flex: true = project-based, freelance or hybrid.
 window.__CREATIVE_FAB_COMPANIES__ = [
@@ -223,12 +223,89 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     note: "On site, but a good example of metals shop-drawing work; remote railing detailing is more often freelance (see Cad Crowd)."
   },
 
+  // ── Rhino + Grasshopper modeling ──
+  {
+    name: "Resort Sculpture Project (Hong Kong)", category: "Rhino + Grasshopper", website: null,
+    hq: "Hong Kong (project in Thailand)", careersUrl: "https://discourse.mcneel.com/t/rhinoceros-3d-and-grasshopper-designer-wanted/222619",
+    postings: [
+      { title: "In-House Computational Designer – Sculptures & Feature Art", url: "https://discourse.mcneel.com/t/rhinoceros-3d-and-grasshopper-designer-wanted/222619", tags: ["digital-modeling"], remote: true, summary: "Fully remote, full-time. Grasshopper definitions for monumental sculptures and architectural features at a luxury resort in Thailand, plus production files for fabricators in mainland China. Send CV and Grasshopper portfolio to marco@vegasoulcap.com. Posted Sep 11, 2026." }
+    ],
+    note: "Posted on the McNeel (Rhino) Jobs & Portfolios forum. Pay is not listed; time zones will matter for coordination with Asia."
+  },
+  {
+    name: "Arcadis", category: "Rhino + Grasshopper", website: "https://www.arcadis.com/",
+    hq: "US offices (global firm)", careersUrl: "https://www.jobleads.com/us/job/remote-parametric-designer-rhino-grasshopper-gis--los-angeles--e49b20995f88d486279ff6cefbe16736d",
+    postings: [
+      { title: "Remote Parametric Designer – Rhino/Grasshopper & GIS", url: "https://www.jobleads.com/us/job/remote-parametric-designer-rhino-grasshopper-gis--los-angeles--e49b20995f88d486279ff6cefbe16736d", tags: ["digital-modeling"], remote: true, summary: "Remote or any US Arcadis office. Builds Grasshopper workflows for architecture, urban design and planning; Python required. $100,000–$120,000." }
+    ],
+    note: "Seen on job boards (2026), not confirmed on Arcadis's own careers site. Less fabrication, more design computation."
+  },
+  {
+    name: "Handshake (AI training)", category: "Rhino + Grasshopper", website: "https://joinhandshake.com/",
+    hq: "Remote (US)", careersUrl: "https://jobs.ashbyhq.com/handshake/8b910a1b-4694-4cf2-9f79-b751a0c3694a",
+    postings: [
+      { title: "Rhino 3D Modeler – AI Trainer (Contract)", url: "https://jobs.ashbyhq.com/handshake/8b910a1b-4694-4cf2-9f79-b751a0c3694a", tags: ["digital-modeling"], remote: true, flex: true, summary: "Remote, contract, asynchronous; often 5–20 hrs/week on active projects. Reviews AI-generated NURBS and freeform models. 3+ years of Rhino. $125/hr." }
+    ],
+    note: "Listed on several remote job boards (2026); Handshake's own posting page did not load for verification."
+  },
+
+  // ── CNC routing ──
+  {
+    name: "E F San Juan", category: "CNC Routing", website: null,
+    hq: "Youngstown, FL", careersUrl: "https://www.ziprecruiter.com/c/E-F-San-Juan-Inc/Job/CNC-Programmer/-in-Youngstown,FL?jid=ed4d7efcc8152464",
+    postings: [
+      { title: "CNC Programmer (Remote)", url: "https://www.ziprecruiter.com/c/E-F-San-Juan-Inc/Job/CNC-Programmer/-in-Youngstown,FL?jid=ed4d7efcc8152464", tags: ["cnc"], remote: true, summary: "Remote, US. Programs 3- and 5-axis CNC routers in Mastercam from AutoCAD drawings for architectural millwork: DXF prep, tooling, toolpaths, tool libraries. 3+ years. $30–$40/hr." }
+    ],
+    note: "Seen on ZipRecruiter (2026), not confirmed on a company careers page."
+  },
+  {
+    name: "TwoSeven Inc", category: "CNC Routing", website: null,
+    hq: "Brooklyn, NY", careersUrl: "https://www.ziprecruiter.com/Jobs/Rhino-CNC",
+    postings: [
+      { title: "CNC & Digital Fabrication Technician", url: "https://www.ziprecruiter.com/Jobs/Rhino-CNC", tags: ["cnc"], summary: "Brooklyn, NY, on site. Turns Rhino models and drawings into production-ready CNC and digital-fab workflows and runs them. $25–$35/hr." }
+    ],
+    note: "Seen on job boards (Sep 2026), not confirmed on a company careers page."
+  },
+
+  // ── 3D printing ──
+  {
+    name: "Formlabs", category: "3D Printing", website: "https://formlabs.com/",
+    hq: "Somerville, MA", careersUrl: "https://careers.formlabs.com/",
+    postings: [
+      { title: "3D Print Optimization Engineer", url: "https://careers.formlabs.com/job/8238369/apply/?gh_jid=8238369", tags: ["cnc"], summary: "Somerville, MA, on site. Tunes print settings and processes for Formlabs printers." },
+      { title: "3D Print Technician", url: "https://careers.formlabs.com/job/8241507/apply/?gh_jid=8241507", tags: ["cnc"], summary: "Somerville, MA, on site. Runs and maintains printers and print jobs." },
+      { title: "Product Support Specialist (3D Printing)", url: "https://careers.formlabs.com/job/8089668/apply/?gh_jid=8089668", tags: ["cnc"], summary: "Milwaukee, WI, on site. Supports customers with printing questions and troubleshooting." }
+    ],
+    note: "Checked 2026-10-01 (223 open roles). Formlabs' remote roles are all field and support jobs in Europe; none in the US."
+  },
+  {
+    name: "Xometry", category: "3D Printing", website: "https://www.xometry.com/",
+    hq: "North Bethesda, MD", careersUrl: "https://job-boards.greenhouse.io/xometry",
+    postings: [
+      { title: "DFM Project Engineer", url: "https://job-boards.greenhouse.io/xometry/jobs/5141549007", tags: ["digital-modeling", "coordination"], summary: "Waltham, MA (also LA, Denver, Lexington, North Bethesda). Design-for-manufacturing review of customer parts across 3D printing, CNC, sheet and molding." },
+      { title: "Additive Technician", url: "https://job-boards.greenhouse.io/xometry/jobs/5232223007", tags: ["cnc"], summary: "Gaithersburg, MD, on site. Runs additive (3D printing) production." }
+    ],
+    note: "Checked 2026-10-01 (237 open roles). Online manufacturing marketplace for 3D printing, laser cutting, CNC and sheet metal; no remote design roles right now."
+  },
+
   // ── Remote / freelance channels ──
+  {
+    name: "Upwork", category: "Remote + Freelance Board", website: "https://www.upwork.com/",
+    hq: "Remote", careersUrl: "https://www.upwork.com/freelance-jobs/grasshopper-for-rhino3d/",
+    postings: [],
+    note: "Freelance categories worth watching: Grasshopper for Rhino (upwork.com/freelance-jobs/grasshopper-for-rhino3d), CNC programming (upwork.com/freelance-jobs/cnc-programming) and laser engraving (upwork.com/freelance-jobs/laser-engraving)."
+  },
+  {
+    name: "McNeel Jobs & Portfolios Forum", category: "Remote + Freelance Board", website: "https://discourse.mcneel.com/",
+    hq: "Remote", careersUrl: "https://discourse.mcneel.com/c/jobs-portfolios/35",
+    postings: [],
+    note: "The Rhino developer's own forum, where studios post Rhino and Grasshopper roles, many of them remote or contract. You can also post your portfolio here."
+  },
   {
     name: "Cad Crowd", category: "Remote + Freelance Board", website: "https://www.cadcrowd.com/",
     hq: "Remote", careersUrl: "https://www.cadcrowd.com/jobs/design-to-fabrication",
     postings: [],
-    note: "Freelance marketplace with a design-to-fabrication category: remote CNC, Rhino and fabrication-drawing jobs posted by shops and clients."
+    note: "Freelance marketplace with remote categories for design-to-fabrication, CNC programming (cadcrowd.com/jobs/cnc-programming), 3D print design (cadcrowd.com/jobs/3d-print-design), CNC/laser parts (cadcrowd.com/jobs/cnc-part-design) and Rhino (cadcrowd.com/jobs/rhino-3d)."
   },
   {
     name: "Themed Entertainment Jobs", category: "Remote + Freelance Board", website: "https://themedentertainmentjobs.com/",

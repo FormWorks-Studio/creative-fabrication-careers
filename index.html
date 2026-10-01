@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Creative Fabrication Careers</title>
-<meta name="description" content="Creative fabrication studios like The Factory NYC, with careers pages checked for 3D and technical design, CNC + CAM, and project and production roles, with remote and freelance roles pulled out.">
+<meta name="description" content="Creative fabrication studios like The Factory NYC, with careers pages checked for 3D and technical design, CNC, laser + 3D print, and project and production roles, with remote and freelance roles pulled out.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -195,7 +195,7 @@
   <div class="wrap">
     <p class="eyebrow">Creative Fabrication</p>
     <h1>Shop drawing, technical design &amp; CNC jobs across creative fabrication, with remote roles first.</h1>
-    <p class="lede">Studios like The Factory NYC, plus the trades around them where remote shop-drawing work is common: millwork and casework, millwork drafting firms, signage and wayfinding, architectural metals, exhibits and immersive builds. Careers pages are checked for shop drawings and 3D, CNC and CAM, and project and production roles. Remote roles open first; part-time, contract and freelance work has its own tab. Click any company to see its matched postings.</p>
+    <p class="lede">Studios like The Factory NYC, plus the trades around them where remote work is common: millwork and casework, millwork drafting firms, signage and wayfinding, architectural metals, Rhino and Grasshopper modeling, CNC routing, 3D printing and laser cutting. Careers pages are checked for shop drawings and 3D, CNC, laser and 3D-print, and project and production roles. Remote roles open first; part-time, contract and freelance work has its own tab. Click any company to see its matched postings.</p>
     <div class="stats-row">
       <div class="stat"><b id="stat-companies">0</b><span>Companies scanned</span></div>
       <div class="stat"><b id="stat-with-postings">0</b><span>With matching roles</span></div>
@@ -210,7 +210,7 @@
     <div class="chip-group" id="tag-filters">
       <button class="chip active" data-tag="all">All companies</button>
       <button class="chip" data-tag="digital-modeling">Shop drawings + 3D</button>
-      <button class="chip tag-cnc" data-tag="cnc">CNC + CAM</button>
+      <button class="chip tag-cnc" data-tag="cnc">CNC, laser + 3D print</button>
       <button class="chip tag-coordination" data-tag="coordination">Project + production</button>
       <button class="chip" data-tag="has-postings">Has open roles</button>
     </div>
@@ -326,7 +326,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Studios chosen for work like The Factory NYC: art, scenic, experiential, exhibit and architectural fabrication, millwork and casework, signage, and architectural metals, plus two remote and freelance job boards. Checked October 1, 2026. Postings marked as seen on job boards were not confirmed on the company&rsquo;s own careers page.</p><p>See also <a href="https://formworks-studio.github.io/mass-timber-careers/">Mass Timber Careers</a>.</p>
+    <p>Studios chosen for work like The Factory NYC: art, scenic, experiential, exhibit and architectural fabrication, millwork and casework, signage, architectural metals, Rhino and Grasshopper modeling, CNC routing and 3D printing, plus remote and freelance job boards. Checked October 1, 2026. Postings marked as seen on job boards were not confirmed on the company&rsquo;s own careers page.</p><p>See also <a href="https://formworks-studio.github.io/mass-timber-careers/">Mass Timber Careers</a>.</p>
     <p>Job postings change constantly — this is a snapshot from research done when this page was built, not a live feed. Always confirm on the company's own careers page before applying.</p>
   </div>
 </footer>
@@ -341,7 +341,7 @@
   // pick just one, like a card's left-border accent color).
   const TAG_META = {
     'digital-modeling': { label: 'Shop drawings + 3D', cls: 'digital-modeling', priority: 0 },
-    'cnc': { label: 'CNC + CAM', cls: 'cnc', priority: 1 },
+    'cnc': { label: 'CNC, laser + 3D print', cls: 'cnc', priority: 1 },
     'coordination': { label: 'Project + production', cls: 'coordination', priority: 2 },
   };
   function primaryTagClass(tags) {
@@ -431,7 +431,7 @@
               ${p.summary ? `<p class="posting-summary">${escapeHtml(p.summary)}</p>` : ''}
             </div>
           `).join('')}</div>`
-        : `<p class="no-postings-note">${escapeHtml(c.note || 'No current openings in technical design, CNC + CAM, or project and production roles listed.')}</p>`;
+        : `<p class="no-postings-note">${escapeHtml(c.note || 'No current openings in technical design, CNC, laser + 3D print, or project and production roles listed.')}</p>`;
 
       return `
         <tr class="company-row${isOpen ? ' is-open' : ''}" data-name="${escapeHtml(c.name)}">
