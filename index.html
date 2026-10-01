@@ -164,6 +164,10 @@
   .posting-tag.coordination { background: var(--stone-soft); color: var(--stone); }
   .posting-tag.cnc { background: var(--black); color: var(--accent-ink); }
   .posting-summary { margin-top: 3px; font-size: 13px; color: var(--ink-soft); max-width: 72ch; }
+  .cell-posted { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); white-space: nowrap; }
+  .cell-posted .none { color: var(--ink-faint); }
+  .cell-posted.fresh, .posting-date.fresh { color: var(--accent); font-weight: 500; }
+  .posting-date { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--ink-faint); white-space: nowrap; }
   .no-postings-note { padding-top: 6px; font-size: 13px; color: var(--ink-faint); }
 
   tbody tr.remote-row { border-bottom: 1px solid var(--line); transition: background 0.12s; }
@@ -258,6 +262,7 @@
             <th data-flat-key="company">Company <span class="sort-arrow">↕</span></th>
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
             <th>Posting</th>
           </tr>
         </thead>
@@ -277,6 +282,7 @@
             <th data-flat-key="hq">HQ <span class="sort-arrow">↕</span></th>
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
             <th>Posting</th>
           </tr>
         </thead>
@@ -296,6 +302,7 @@
             <th data-flat-key="hq">HQ <span class="sort-arrow">↕</span></th>
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
             <th>Posting</th>
           </tr>
         </thead>
@@ -315,6 +322,7 @@
             <th data-flat-key="hq">HQ <span class="sort-arrow">↕</span></th>
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
             <th>Posting</th>
           </tr>
         </thead>
@@ -427,6 +435,7 @@
               <div class="posting-title-row">
                 <span class="posting-title">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>` : escapeHtml(p.title)}</span>
                 ${(p.tags || []).filter(t => TAG_META[t]).map(t => `<span class="posting-tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join('')}
+                ${p.posted ? `<span class="posting-date${isFresh(p.posted) ? ' fresh' : ''}">Posted ${fmtDate(p.posted)}</span>` : ''}
               </div>
               ${p.summary ? `<p class="posting-summary">${escapeHtml(p.summary)}</p>` : ''}
             </div>
@@ -494,16 +503,22 @@
     });
   });
 
+  // Posted dates: "Sep 30, 2026"; anything from the last 14 days is marked fresh.
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function fmtDate(d) { return d ? `${MONTHS[+d.slice(5, 7) - 1]} ${+d.slice(8, 10)}, ${d.slice(0, 4)}` : ''; }
+  function isFresh(d) { return !!d && (Date.now() - Date.parse(d)) / 864e5 <= 14; }
+
   function makeFlatTab(key, filterFn, opts) {
     const tbody = document.getElementById(key + '-table-body');
     const countEl = document.getElementById(key + '-result-count');
     const panel = document.getElementById('panel-' + key);
-    let localSortKey = 'title';
-    let localSortDir = 1;
+    let localSortKey = 'posted';
+    let localSortDir = -1;
 
     function render() {
       const rows = ALL_FLAT_POSTINGS.filter(filterFn).slice().sort((a, b) => {
         let av, bv;
+        if (localSortKey === 'posted' && !a.posted !== !b.posted) return a.posted ? -1 : 1;
         if (localSortKey === 'tags') { av = (a.tags || []).join(','); bv = (b.tags || []).join(','); }
         else { av = (a[localSortKey] || '').toString().toLowerCase(); bv = (b[localSortKey] || '').toString().toLowerCase(); }
         if (av < bv) return -1 * localSortDir;
@@ -512,7 +527,7 @@
       });
 
       countEl.textContent = `${rows.length} position${rows.length === 1 ? '' : 's'}`;
-      const colCount = opts.hasHq ? 6 : 5;
+      const colCount = opts.hasHq ? 7 : 6;
 
       tbody.innerHTML = rows.length ? rows.map(p => `
         <tr class="remote-row">
@@ -521,6 +536,7 @@
           ${opts.hasHq ? `<td class="remote-hq">${escapeHtml(p.hq || '—')}</td>` : ''}
           <td>${(p.tags || []).filter(t => TAG_META[t]).map(t => `<span class="posting-tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join(' ')}</td>
           <td class="remote-summary">${escapeHtml(p.summary || '')}</td>
+          <td class="cell-posted${isFresh(p.posted) ? ' fresh' : ''}">${p.posted ? fmtDate(p.posted) : '<span class="none">—</span>'}</td>
           <td class="cell-link">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Open ↗</a>` : `<span class="none">—</span>`}</td>
         </tr>
       `).join('') : `<tr><td colspan="${colCount}" class="empty-note">${opts.emptyText}</td></tr>`;
@@ -530,7 +546,7 @@
       th.addEventListener('click', () => {
         const k = th.dataset.flatKey;
         if (k === localSortKey) localSortDir *= -1;
-        else { localSortKey = k; localSortDir = 1; }
+        else { localSortKey = k; localSortDir = k === 'posted' ? -1 : 1; }
         panel.querySelectorAll('th[data-flat-key]').forEach(h => h.classList.toggle('sorted', h === th));
         render();
       });

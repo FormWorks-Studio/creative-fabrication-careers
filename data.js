@@ -8,9 +8,9 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Meow Wolf", category: "Immersive + Themed", website: "https://meowwolf.com/",
     hq: "Santa Fe, NM (also Denver, Las Vegas, Grapevine, Houston, LA, NYC)", careersUrl: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/",
     postings: [
-      { title: "Facility Design Manager (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Remote---New-York/Facility-Design-Manager--Project-Based-Role-_JR102598", tags: ["coordination"], remote: true, flex: true, summary: "Remote, New York. Project-based design management role for Meow Wolf's immersive exhibitions. $121,391–$167,520." },
-      { title: "Lead Exhibition Technical Engineer", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Grapevine-TX/Lead-Exhibition-Technical-Engineer_JR102613", tags: ["digital-modeling"], summary: "Grapevine, TX. Leads technical engineering for exhibition artwork and interactives." },
-      { title: "Production Director, AD&P (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/Production-Director--AD-P--Project-Based-Role-_JR102592", tags: ["coordination"], flex: true, summary: "Santa Fe, NM. Project-based production leadership for art direction and production." }
+      { title: "Facility Design Manager (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Remote---New-York/Facility-Design-Manager--Project-Based-Role-_JR102598", tags: ["coordination"], remote: true, flex: true, posted: "2026-08-19", summary: "Remote, New York. Project-based design management role for Meow Wolf's immersive exhibitions. $121,391–$167,520." },
+      { title: "Lead Exhibition Technical Engineer", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Grapevine-TX/Lead-Exhibition-Technical-Engineer_JR102613", tags: ["digital-modeling"], posted: "2026-08-28", summary: "Grapevine, TX. Leads technical engineering for exhibition artwork and interactives." },
+      { title: "Production Director, AD&P (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/Production-Director--AD-P--Project-Based-Role-_JR102592", tags: ["coordination"], flex: true, posted: "2026-08-21", summary: "Santa Fe, NM. Project-based production leadership for art direction and production." }
     ],
     note: "Checked 2026-10-01 on Meow Wolf's Workday board. A remote Technical Designer – Signage role listed earlier in 2026 is no longer posted."
   },
@@ -42,8 +42,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Showman Fabricators (ShowFab)", category: "Scenic + Experiential", website: "https://showfab.com/",
     hq: "Fairfield, NJ", careersUrl: "https://showfab.com/careers/",
     postings: [
-      { title: "Project Manager", url: "https://showfab.com/jobs/project-manager-scene-shop-nyc/", tags: ["coordination"], summary: "Fairfield, NJ. Runs scene-shop projects for Broadway, film/TV, museum, retail and experiential clients." },
-      { title: "Associate Project Manager", url: "https://showfab.com/jobs/associate-project-manager/", tags: ["coordination"], summary: "Fairfield, NJ. Supports project management at the main facility." }
+      { title: "Project Manager", url: "https://showfab.com/jobs/project-manager-scene-shop-nyc/", tags: ["coordination"], posted: "2023-11-08", summary: "Fairfield, NJ. Runs scene-shop projects for Broadway, film/TV, museum, retail and experiential clients." },
+      { title: "Associate Project Manager", url: "https://showfab.com/jobs/associate-project-manager/", tags: ["coordination"], posted: "2026-09-17", summary: "Fairfield, NJ. Supports project management at the main facility." }
     ],
     note: "Also hiring an Automation Integrator and Installer and a Lead Carpenter. General applications: jobs@showfab.com."
   },
@@ -93,8 +93,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Arktura", category: "Architectural Fabrication", website: "https://arktura.com/",
     hq: "Carson, CA", careersUrl: "https://jobs.armstrong.com/go/Arktura-Jobs/9554700/",
     postings: [
-      { title: "AS Design Estimator", url: "https://jobs.armstrong.com/job/Carson-AS-Design-Estimator-Job-CA-90746/1429859700/", tags: ["coordination"], summary: "Carson, CA. Design estimating for architectural systems. Posted Sep 14, 2026." },
-      { title: "Technical Services Specialist", url: "https://jobs.armstrong.com/job/Carson-Technical-Services-Specialist-Job-CA-90746/1408420600/", tags: ["digital-modeling"], summary: "Carson, CA. Technical support for Arktura's architectural products. Posted Sep 9, 2026." }
+      { title: "AS Design Estimator", url: "https://jobs.armstrong.com/job/Carson-AS-Design-Estimator-Job-CA-90746/1429859700/", tags: ["coordination"], posted: "2026-09-14", summary: "Carson, CA. Design estimating for architectural systems. Posted Sep 14, 2026." },
+      { title: "Technical Services Specialist", url: "https://jobs.armstrong.com/job/Carson-Technical-Services-Specialist-Job-CA-90746/1408420600/", tags: ["digital-modeling"], posted: "2026-09-09", summary: "Carson, CA. Technical support for Arktura's architectural products. Posted Sep 9, 2026." }
     ],
     note: "Part of Armstrong. Its only remote opening right now is a National Sales Director. Remote Architectural Job Captain roles have been posted in the past."
   },
@@ -102,8 +102,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Turf (Armstrong)", category: "Architectural Fabrication", website: "https://turf.design/",
     hq: "Gilberts, IL", careersUrl: "https://jobs.armstrong.com/go/Zahner-Jobs/9554800/",
     postings: [
-      { title: "Computational Designer", url: "https://jobs.armstrong.com/job/Chicago-Computational-Designer-Job-IL/1391097900/", tags: ["digital-modeling"], summary: "Chicago, IL. Computational design for architectural felt and acoustic products. Posted Sep 27, 2026." },
-      { title: "Arch Spec CAD Designer", url: "https://jobs.armstrong.com/job/Chicago-Arch-Spec-CAD-Designer-Job-IL/1409195200/", tags: ["digital-modeling"], summary: "Chicago, IL. CAD design for architectural specification work. Posted Sep 11, 2026." }
+      { title: "Computational Designer", url: "https://jobs.armstrong.com/job/Chicago-Computational-Designer-Job-IL/1391097900/", tags: ["digital-modeling"], posted: "2026-09-27", summary: "Chicago, IL. Computational design for architectural felt and acoustic products. Posted Sep 27, 2026." },
+      { title: "Arch Spec CAD Designer", url: "https://jobs.armstrong.com/job/Chicago-Arch-Spec-CAD-Designer-Job-IL/1409195200/", tags: ["digital-modeling"], posted: "2026-09-11", summary: "Chicago, IL. CAD design for architectural specification work. Posted Sep 11, 2026." }
     ],
     note: null
   },
@@ -228,7 +228,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Resort Sculpture Project (Hong Kong)", category: "Rhino + Grasshopper", website: null,
     hq: "Hong Kong (project in Thailand)", careersUrl: "https://discourse.mcneel.com/t/rhinoceros-3d-and-grasshopper-designer-wanted/222619",
     postings: [
-      { title: "In-House Computational Designer – Sculptures & Feature Art", url: "https://discourse.mcneel.com/t/rhinoceros-3d-and-grasshopper-designer-wanted/222619", tags: ["digital-modeling"], remote: true, summary: "Fully remote, full-time. Grasshopper definitions for monumental sculptures and architectural features at a luxury resort in Thailand, plus production files for fabricators in mainland China. Send CV and Grasshopper portfolio to marco@vegasoulcap.com. Posted Sep 11, 2026." }
+      { title: "In-House Computational Designer – Sculptures & Feature Art", url: "https://discourse.mcneel.com/t/rhinoceros-3d-and-grasshopper-designer-wanted/222619", tags: ["digital-modeling"], remote: true, posted: "2026-09-11", summary: "Fully remote, full-time. Grasshopper definitions for monumental sculptures and architectural features at a luxury resort in Thailand, plus production files for fabricators in mainland China. Send CV and Grasshopper portfolio to marco@vegasoulcap.com. Posted Sep 11, 2026." }
     ],
     note: "Posted on the McNeel (Rhino) Jobs & Portfolios forum. Pay is not listed; time zones will matter for coordination with Asia."
   },
@@ -272,9 +272,9 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Formlabs", category: "3D Printing", website: "https://formlabs.com/",
     hq: "Somerville, MA", careersUrl: "https://careers.formlabs.com/",
     postings: [
-      { title: "3D Print Optimization Engineer", url: "https://careers.formlabs.com/job/8238369/apply/?gh_jid=8238369", tags: ["cnc"], summary: "Somerville, MA, on site. Tunes print settings and processes for Formlabs printers." },
-      { title: "3D Print Technician", url: "https://careers.formlabs.com/job/8241507/apply/?gh_jid=8241507", tags: ["cnc"], summary: "Somerville, MA, on site. Runs and maintains printers and print jobs." },
-      { title: "Product Support Specialist (3D Printing)", url: "https://careers.formlabs.com/job/8089668/apply/?gh_jid=8089668", tags: ["cnc"], summary: "Milwaukee, WI, on site. Supports customers with printing questions and troubleshooting." }
+      { title: "3D Print Optimization Engineer", url: "https://careers.formlabs.com/job/8238369/apply/?gh_jid=8238369", tags: ["cnc"], posted: "2026-09-28", summary: "Somerville, MA, on site. Tunes print settings and processes for Formlabs printers." },
+      { title: "3D Print Technician", url: "https://careers.formlabs.com/job/8241507/apply/?gh_jid=8241507", tags: ["cnc"], posted: "2026-09-29", summary: "Somerville, MA, on site. Runs and maintains printers and print jobs." },
+      { title: "Product Support Specialist (3D Printing)", url: "https://careers.formlabs.com/job/8089668/apply/?gh_jid=8089668", tags: ["cnc"], posted: "2026-07-27", summary: "Milwaukee, WI, on site. Supports customers with printing questions and troubleshooting." }
     ],
     note: "Checked 2026-10-01 (223 open roles). Formlabs' remote roles are all field and support jobs in Europe; none in the US."
   },
@@ -282,8 +282,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Xometry", category: "3D Printing", website: "https://www.xometry.com/",
     hq: "North Bethesda, MD", careersUrl: "https://job-boards.greenhouse.io/xometry",
     postings: [
-      { title: "DFM Project Engineer", url: "https://job-boards.greenhouse.io/xometry/jobs/5141549007", tags: ["digital-modeling", "coordination"], summary: "Waltham, MA (also LA, Denver, Lexington, North Bethesda). Design-for-manufacturing review of customer parts across 3D printing, CNC, sheet and molding." },
-      { title: "Additive Technician", url: "https://job-boards.greenhouse.io/xometry/jobs/5232223007", tags: ["cnc"], summary: "Gaithersburg, MD, on site. Runs additive (3D printing) production." }
+      { title: "DFM Project Engineer", url: "https://job-boards.greenhouse.io/xometry/jobs/5141549007", tags: ["digital-modeling", "coordination"], posted: "2026-05-19", summary: "Waltham, MA (also LA, Denver, Lexington, North Bethesda). Design-for-manufacturing review of customer parts across 3D printing, CNC, sheet and molding." },
+      { title: "Additive Technician", url: "https://job-boards.greenhouse.io/xometry/jobs/5232223007", tags: ["cnc"], posted: "2026-09-08", summary: "Gaithersburg, MD, on site. Runs additive (3D printing) production." }
     ],
     note: "Checked 2026-10-01 (237 open roles). Online manufacturing marketplace for 3D printing, laser cutting, CNC and sheet metal; no remote design roles right now."
   },
@@ -293,7 +293,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "American Marine", category: "Rhino + Grasshopper", website: null,
     hq: "South Florida, FL", careersUrl: "https://discourse.mcneel.com/t/rhino-3d-digital-fabrication-specialist-south-florida/222294",
     postings: [
-      { title: "Rhino 3D / Digital Fabrication Specialist", url: "https://discourse.mcneel.com/t/rhino-3d-digital-fabrication-specialist-south-florida/222294", tags: ["digital-modeling", "cnc"], summary: "South Florida, full-time, on site. Custom yacht canvas and upholstery: measure onboard, build geometry in Rhino, develop patterns in ExactFlat/Proliner and prep production files. Will train. Posted Sep 1, 2026." }
+      { title: "Rhino 3D / Digital Fabrication Specialist", url: "https://discourse.mcneel.com/t/rhino-3d-digital-fabrication-specialist-south-florida/222294", tags: ["digital-modeling", "cnc"], posted: "2026-09-01", summary: "South Florida, full-time, on site. Custom yacht canvas and upholstery: measure onboard, build geometry in Rhino, develop patterns in ExactFlat/Proliner and prep production files. Will train. Posted Sep 1, 2026." }
     ],
     note: "Posted on the McNeel (Rhino) forum."
   },
@@ -301,7 +301,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "South Texas Canvas", category: "Rhino + Grasshopper", website: "https://southtexascanvas.net/",
     hq: "South Texas, TX", careersUrl: "https://discourse.mcneel.com/t/now-hiring-design-production-manager-for-canvas-shop/222731",
     postings: [
-      { title: "Design / Production Manager", url: "https://discourse.mcneel.com/t/now-hiring-design-production-manager-for-canvas-shop/222731", tags: ["coordination", "digital-modeling"], summary: "Full-time, in house. Modernize design and production for shade structures, awnings and signage and bring in Rhino. Contact jay@southtexascanvas.net. Posted Sep 15, 2026." }
+      { title: "Design / Production Manager", url: "https://discourse.mcneel.com/t/now-hiring-design-production-manager-for-canvas-shop/222731", tags: ["coordination", "digital-modeling"], posted: "2026-09-15", summary: "Full-time, in house. Modernize design and production for shade structures, awnings and signage and bring in Rhino. Contact jay@southtexascanvas.net. Posted Sep 15, 2026." }
     ],
     note: "Posted on the McNeel (Rhino) forum."
   },
@@ -309,7 +309,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Dusty Strings", category: "Rhino + Grasshopper", website: "https://manufacturing.dustystrings.com/",
     hq: "Seattle, WA", careersUrl: "https://manufacturing.dustystrings.com/about-us/employment",
     postings: [
-      { title: "Harp & Dulcimer Maker (Rhino)", url: "https://manufacturing.dustystrings.com/about-us/employment", tags: ["digital-modeling"], summary: "Seattle, WA, on site. Instrument building with Rhino experience highly desired. Posted Jul 17, 2026." }
+      { title: "Harp & Dulcimer Maker (Rhino)", url: "https://manufacturing.dustystrings.com/about-us/employment", tags: ["digital-modeling"], posted: "2026-07-17", summary: "Seattle, WA, on site. Instrument building with Rhino experience highly desired. Posted Jul 17, 2026." }
     ],
     note: "Posted on the McNeel (Rhino) forum; full details on their employment page."
   },
@@ -317,7 +317,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "CLT Computational Design Startup", category: "Rhino + Grasshopper", website: "https://skeleton.deeptechfomo.com/",
     hq: "Palo Alto, CA", careersUrl: "https://discourse.mcneel.com/t/clt-panel-layout-across-6-envelopes/221585",
     postings: [
-      { title: "Computational Designer (CLT)", url: "https://discourse.mcneel.com/t/clt-panel-layout-across-6-envelopes/221585", tags: ["digital-modeling"], summary: "Palo Alto, CA. One seat; salary plus equity. You apply by solving a Grasshopper challenge on CLT floor-panel layout with structural and fabrication rules instead of sending a CV. Posted Aug 7, 2026." }
+      { title: "Computational Designer (CLT)", url: "https://discourse.mcneel.com/t/clt-panel-layout-across-6-envelopes/221585", tags: ["digital-modeling"], posted: "2026-08-07", summary: "Palo Alto, CA. One seat; salary plus equity. You apply by solving a Grasshopper challenge on CLT floor-panel layout with structural and fabrication rules instead of sending a CV. Posted Aug 7, 2026." }
     ],
     note: "Posted on the McNeel (Rhino) forum. A close match for a mass timber and Grasshopper background."
   },
@@ -325,7 +325,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Speckle", category: "AEC Software", website: "https://speckle.systems/",
     hq: "Remote (US and EU)", careersUrl: "https://jobs.ashbyhq.com/speckle",
     postings: [
-      { title: "Solution Architect", url: "https://jobs.ashbyhq.com/speckle/2f914da8-61a7-444b-9c43-5487d3f2100d", tags: ["coordination"], remote: true, summary: "Remote (USA). Helps AEC customers set up Speckle, the data platform that connects Rhino, Grasshopper, Revit and other design tools." }
+      { title: "Solution Architect", url: "https://jobs.ashbyhq.com/speckle/2f914da8-61a7-444b-9c43-5487d3f2100d", tags: ["coordination"], remote: true, posted: "2026-04-16", summary: "Remote (USA). Helps AEC customers set up Speckle, the data platform that connects Rhino, Grasshopper, Revit and other design tools." }
     ],
     note: "Checked 2026-10-01 on Speckle's own job board."
   },
@@ -333,7 +333,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "TH Experiential", category: "Exhibit + Experience Design-Build", website: null,
     hq: "Remote (US)", careersUrl: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/",
     postings: [
-      { title: "Senior 3D Experiential Designer", url: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/", tags: ["digital-modeling"], remote: true, summary: "Remote, US. Spatial concepts, floor plans, elevations, 3D models and renderings for brand activations; manages fabrication vendors and installs. SketchUp, Rhino or 3ds Max. 2–6+ years." }
+      { title: "Senior 3D Experiential Designer", url: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/", tags: ["digital-modeling"], remote: true, posted: "2026-05-02", summary: "Remote, US. Spatial concepts, floor plans, elevations, 3D models and renderings for brand activations; manages fabrication vendors and installs. SketchUp, Rhino or 3ds Max. 2–6+ years." }
     ],
     note: "Seen on remote job boards (2026), not confirmed on a company careers page."
   },
@@ -357,12 +357,12 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "McNeel Jobs & Portfolios Forum", category: "Remote + Freelance Board", website: "https://discourse.mcneel.com/",
     hq: "Remote", careersUrl: "https://discourse.mcneel.com/c/jobs-portfolios/35",
     postings: [
-      { title: "Rhino/Grasshopper Detailer – Curved FRP Windows & Doors", url: "https://discourse.mcneel.com/t/hiring-rhino-grasshopper-detailer/223154", tags: ["digital-modeling"], remote: true, flex: true, summary: "Consultant. Rationalize and detail ~1,000 sf of curved glass windows and doors set into a fiberglass-over-foam wall: geometry rationalization, waterproofing details, fabrication-ready drawings. Advanced Rhino; Grasshopper preferred. Posted Sep 30, 2026, no replies yet." },
-      { title: "Parametric Bargeboard Generator (UK joinery shop)", url: "https://discourse.mcneel.com/t/paid-parametric-bargeboard-generator-for-a-uk-joinery-workshop/222036", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Paid freelance. A Grasshopper tool that generates decorative timber bargeboards from a few dimensions and outputs SVG/DXF cutting files and a setting-out schedule. Posted Aug 21, 2026." },
-      { title: "Fiberglass Panel Cutting Stencils", url: "https://discourse.mcneel.com/t/rhino-grasshopper-specialist-needed-for-full-scale-cardboard-stencil/221591", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Paid commission after a test piece. Flatten double-curved fiberglass panels into 1:1 cardboard stencils with registration marks; UnrollSrf, Squish, Grasshopper; DXF output. Posted Aug 7, 2026." },
-      { title: "3D-Printed Casting Shell Automation", url: "https://discourse.mcneel.com/t/grasshopper-job/221415", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Freelance. Grasshopper workflow that builds 3D-printed investment-casting shells from STEP parts: variable shell, split line, lugs, cores. Posted Aug 3, 2026." },
-      { title: "SLS-Printed Voronoi Lattice (loudspeaker)", url: "https://discourse.mcneel.com/t/grasshopper-expert-for-3d-voronoi-structure/222759", tags: ["digital-modeling", "cnc"], remote: true, flex: true, summary: "Freelance. Grasshopper script for an adjustable 3D Voronoi lattice, watertight for SLS printing in PA12. Posted Sep 16, 2026." },
-      { title: "Grasshopper + Kangaroo Simulation (Freelance)", url: "https://discourse.mcneel.com/t/looking-for-grasshopper-kangaroo-expert-freelance/221250", tags: ["digital-modeling"], remote: true, flex: true, summary: "Paid, fully remote, ongoing. Kangaroo physics and equilibrium for a suspended system. Posted Jul 28, 2026." }
+      { title: "Rhino/Grasshopper Detailer – Curved FRP Windows & Doors", url: "https://discourse.mcneel.com/t/hiring-rhino-grasshopper-detailer/223154", tags: ["digital-modeling"], remote: true, flex: true, posted: "2026-09-30", summary: "Consultant. Rationalize and detail ~1,000 sf of curved glass windows and doors set into a fiberglass-over-foam wall: geometry rationalization, waterproofing details, fabrication-ready drawings. Advanced Rhino; Grasshopper preferred. Posted Sep 30, 2026, no replies yet." },
+      { title: "Parametric Bargeboard Generator (UK joinery shop)", url: "https://discourse.mcneel.com/t/paid-parametric-bargeboard-generator-for-a-uk-joinery-workshop/222036", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-21", summary: "Paid freelance. A Grasshopper tool that generates decorative timber bargeboards from a few dimensions and outputs SVG/DXF cutting files and a setting-out schedule. Posted Aug 21, 2026." },
+      { title: "Fiberglass Panel Cutting Stencils", url: "https://discourse.mcneel.com/t/rhino-grasshopper-specialist-needed-for-full-scale-cardboard-stencil/221591", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-07", summary: "Paid commission after a test piece. Flatten double-curved fiberglass panels into 1:1 cardboard stencils with registration marks; UnrollSrf, Squish, Grasshopper; DXF output. Posted Aug 7, 2026." },
+      { title: "3D-Printed Casting Shell Automation", url: "https://discourse.mcneel.com/t/grasshopper-job/221415", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-03", summary: "Freelance. Grasshopper workflow that builds 3D-printed investment-casting shells from STEP parts: variable shell, split line, lugs, cores. Posted Aug 3, 2026." },
+      { title: "SLS-Printed Voronoi Lattice (loudspeaker)", url: "https://discourse.mcneel.com/t/grasshopper-expert-for-3d-voronoi-structure/222759", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-09-16", summary: "Freelance. Grasshopper script for an adjustable 3D Voronoi lattice, watertight for SLS printing in PA12. Posted Sep 16, 2026." },
+      { title: "Grasshopper + Kangaroo Simulation (Freelance)", url: "https://discourse.mcneel.com/t/looking-for-grasshopper-kangaroo-expert-freelance/221250", tags: ["digital-modeling"], remote: true, flex: true, posted: "2026-07-28", summary: "Paid, fully remote, ongoing. Kangaroo physics and equilibrium for a suspended system. Posted Jul 28, 2026." }
     ],
     note: "The Rhino developer's own forum. Gigs listed here were read in full on 2026-10-01; posts with several replies may already be filled. You can also post your own portfolio here."
   },
