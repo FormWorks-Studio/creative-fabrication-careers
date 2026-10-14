@@ -1,4 +1,4 @@
-// Creative fabrication studios and their open roles. Checked 2026-10-01.
+// Creative fabrication studios and their open roles. Checked 2026-10-01; updated 2026-10-13.
 // Tags: digital-modeling = shop drawings + 3D, cnc = CNC, laser + 3D printing,
 // coordination = project + production management.
 // remote: true = fully remote; flex: true = project-based, freelance or hybrid.
@@ -8,6 +8,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Meow Wolf", category: "Immersive + Themed", website: "https://meowwolf.com/",
     hq: "Santa Fe, NM (also Denver, Las Vegas, Grapevine, Houston, LA, NYC)", careersUrl: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/",
     postings: [
+      { title: "CAD Designer (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/CAD-Designer--Project-Based-Role-_JR102666", tags: ["digital-modeling"], flex: true, posted: "2026-10-05", summary: "Santa Fe, NM. Project-based CAD design role on Meow Wolf's immersive exhibition builds. About $60,600 a year." },
+      { title: "Designer Fabricator (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/Designer-Fabricator--Project-Based-Role-_JR102667", tags: ["digital-modeling", "cnc"], flex: true, posted: "2026-10-05", summary: "Santa Fe, NM. Project-based designer-fabricator role building Meow Wolf's exhibition artwork. About $60,600 a year." },
       { title: "Facility Design Manager (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Remote---New-York/Facility-Design-Manager--Project-Based-Role-_JR102598", tags: ["coordination"], remote: true, flex: true, posted: "2026-08-19", summary: "Remote, New York. Project-based design management role for Meow Wolf's immersive exhibitions. $121,391–$167,520." },
       { title: "Lead Exhibition Technical Engineer", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Grapevine-TX/Lead-Exhibition-Technical-Engineer_JR102613", tags: ["digital-modeling"], posted: "2026-08-28", summary: "Grapevine, TX. Leads technical engineering for exhibition artwork and interactives." },
       { title: "Production Director, AD&P (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/Production-Director--AD-P--Project-Based-Role-_JR102592", tags: ["coordination"], flex: true, posted: "2026-08-21", summary: "Santa Fe, NM. Project-based production leadership for art direction and production." }
@@ -93,6 +95,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Arktura", category: "Architectural Fabrication", website: "https://arktura.com/",
     hq: "Carson, CA", careersUrl: "https://jobs.armstrong.com/go/Arktura-Jobs/9554700/",
     postings: [
+      { title: "Machine Operator (5 Axis)", url: "https://jobs.armstrong.com/job/Carson-Machine-Operator-%285-Axis%29-Job-CA-90746/1438074800/", tags: ["cnc"], posted: "2026-10-07", summary: "Carson, CA. Runs 5-axis CNC equipment in Arktura's architectural ceiling and wall fabrication shop." },
       { title: "AS Design Estimator", url: "https://jobs.armstrong.com/job/Carson-AS-Design-Estimator-Job-CA-90746/1429859700/", tags: ["coordination"], posted: "2026-09-14", summary: "Carson, CA. Design estimating for architectural systems. Posted Sep 14, 2026." },
       { title: "Technical Services Specialist", url: "https://jobs.armstrong.com/job/Carson-Technical-Services-Specialist-Job-CA-90746/1408420600/", tags: ["digital-modeling"], posted: "2026-09-09", summary: "Carson, CA. Technical support for Arktura's architectural products. Posted Sep 9, 2026." }
     ],
@@ -102,6 +105,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Turf (Armstrong)", category: "Architectural Fabrication", website: "https://turf.design/",
     hq: "Gilberts, IL", careersUrl: "https://jobs.armstrong.com/go/Zahner-Jobs/9554800/",
     postings: [
+      { title: "Architectural Specialties CAD Designer", url: "https://jobs.armstrong.com/job/Chicago-Architectural-Specialties-CAD-Designer-Job-IL/1439593000/", tags: ["digital-modeling"], posted: "2026-10-13", summary: "Chicago, IL. CAD design for Armstrong's architectural specialties (Turf acoustic products). A new listing, separate from the September Arch Spec CAD Designer role." },
+      { title: "Project Coordinator", url: "https://jobs.armstrong.com/job/Chicago-Project-Coordinator-Job-IL/1439208900/", tags: ["coordination"], posted: "2026-10-12", summary: "Chicago, IL. Project coordination for Turf / Armstrong architectural specialties orders." },
       { title: "Computational Designer", url: "https://jobs.armstrong.com/job/Chicago-Computational-Designer-Job-IL/1391097900/", tags: ["digital-modeling"], posted: "2026-09-27", summary: "Chicago, IL. Computational design for architectural felt and acoustic products. Posted Sep 27, 2026." },
       { title: "Arch Spec CAD Designer", url: "https://jobs.armstrong.com/job/Chicago-Arch-Spec-CAD-Designer-Job-IL/1409195200/", tags: ["digital-modeling"], posted: "2026-09-11", summary: "Chicago, IL. CAD design for architectural specification work. Posted Sep 11, 2026." }
     ],
@@ -272,6 +277,9 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Formlabs", category: "3D Printing", website: "https://formlabs.com/",
     hq: "Somerville, MA", careersUrl: "https://careers.formlabs.com/",
     postings: [
+      { title: "Print Production Specialist", url: "https://careers.formlabs.com/job/8265603/apply/?gh_jid=8265603", tags: ["cnc"], posted: "2026-10-08", summary: "Perrysburg, OH. Production role on Formlabs' 3D print production floor." },
+      { title: "Industrial Designer", url: "https://careers.formlabs.com/job/8249032/apply/?gh_jid=8249032", tags: ["digital-modeling"], posted: "2026-10-02", summary: "Somerville, MA. Industrial design on Formlabs' 3D printers and accessories." },
+      { title: "Senior Industrial Designer", url: "https://careers.formlabs.com/job/8249021/apply/?gh_jid=8249021", tags: ["digital-modeling"], posted: "2026-10-02", summary: "Somerville, MA. Senior industrial design role on Formlabs' 3D printers and accessories." },
       { title: "3D Print Optimization Engineer", url: "https://careers.formlabs.com/job/8238369/apply/?gh_jid=8238369", tags: ["cnc"], posted: "2026-09-28", summary: "Somerville, MA, on site. Tunes print settings and processes for Formlabs printers." },
       { title: "3D Print Technician", url: "https://careers.formlabs.com/job/8241507/apply/?gh_jid=8241507", tags: ["cnc"], posted: "2026-09-29", summary: "Somerville, MA, on site. Runs and maintains printers and print jobs." },
       { title: "Product Support Specialist (3D Printing)", url: "https://careers.formlabs.com/job/8089668/apply/?gh_jid=8089668", tags: ["cnc"], posted: "2026-07-27", summary: "Milwaukee, WI, on site. Supports customers with printing questions and troubleshooting." }
