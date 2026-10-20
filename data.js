@@ -1,4 +1,4 @@
-// Creative fabrication studios and their open roles. Checked 2026-10-01; updated 2026-10-13.
+// Creative fabrication studios and their open roles. Checked 2026-10-01; updated 2026-10-13; re-checked 2026-10-20.
 // Tags: digital-modeling = shop drawings + 3D, cnc = CNC, laser + 3D printing,
 // coordination = project + production management.
 // remote: true = fully remote; flex: true = project-based, freelance or hybrid.
@@ -10,9 +10,7 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     postings: [
       { title: "CAD Designer (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/CAD-Designer--Project-Based-Role-_JR102666", tags: ["digital-modeling"], flex: true, posted: "2026-10-05", summary: "Santa Fe, NM. Project-based CAD design role on Meow Wolf's immersive exhibition builds. About $60,600 a year." },
       { title: "Designer Fabricator (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/Designer-Fabricator--Project-Based-Role-_JR102667", tags: ["digital-modeling", "cnc"], flex: true, posted: "2026-10-05", summary: "Santa Fe, NM. Project-based designer-fabricator role building Meow Wolf's exhibition artwork. About $60,600 a year." },
-      { title: "Facility Design Manager (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Remote---New-York/Facility-Design-Manager--Project-Based-Role-_JR102598", tags: ["coordination"], remote: true, flex: true, posted: "2026-08-19", summary: "Remote, New York. Project-based design management role for Meow Wolf's immersive exhibitions. $121,391–$167,520." },
-      { title: "Lead Exhibition Technical Engineer", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Grapevine-TX/Lead-Exhibition-Technical-Engineer_JR102613", tags: ["digital-modeling"], posted: "2026-08-28", summary: "Grapevine, TX. Leads technical engineering for exhibition artwork and interactives." },
-      { title: "Production Director, AD&P (Project-Based Role)", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Santa-Fe-NM/Production-Director--AD-P--Project-Based-Role-_JR102592", tags: ["coordination"], flex: true, posted: "2026-08-21", summary: "Santa Fe, NM. Project-based production leadership for art direction and production." }
+      { title: "Lead Exhibition Technical Engineer", url: "https://meowwolf.wd1.myworkdayjobs.com/en-US/MeowWolf/job/Grapevine-TX/Lead-Exhibition-Technical-Engineer_JR102613", tags: ["digital-modeling"], posted: "2026-08-28", summary: "Grapevine, TX. Leads technical engineering for exhibition artwork and interactives." }
     ],
     note: "Checked 2026-10-01 on Meow Wolf's Workday board. A remote Technical Designer – Signage role listed earlier in 2026 is no longer posted."
   },
@@ -27,10 +25,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
   {
     name: "Pink Sparrow Scenic", category: "Scenic + Experiential", website: "https://www.pinksparrow.com/",
     hq: "Brooklyn, NY (also Dominguez, CA)", careersUrl: "https://www.pinksparrow.com/jobs",
-    postings: [
-      { title: "Freelance Draftsperson", url: "https://recruiting.paylocity.com/recruiting/jobs/Details/3083817/Pink-Sparrow-Scenic/Freelance-Draftsperson", tags: ["digital-modeling", "cnc"], flex: true, summary: "Dominguez, CA. Shop drawings for in-house fabrication and CNC machine files, working with the Digital Fabrication Manager. Rhino, AutoCAD, SketchUp." }
-    ],
-    note: "Found via job-board listings; Pink Sparrow's own jobs page returned an error on 2026-10-01, so confirm the posting is still open."
+    postings: [],
+    note: "Checked 2026-10-20: the role(s) listed here earlier have closed. Found via job-board listings; Pink Sparrow's own jobs page returned an error on 2026-10-01, so confirm the posting is still open."
   },
   {
     name: "The Lab Fabrication", category: "Scenic + Experiential", website: "https://thelabfabrication.com/",
@@ -44,7 +40,6 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Showman Fabricators (ShowFab)", category: "Scenic + Experiential", website: "https://showfab.com/",
     hq: "Fairfield, NJ", careersUrl: "https://showfab.com/careers/",
     postings: [
-      { title: "Project Manager", url: "https://showfab.com/jobs/project-manager-scene-shop-nyc/", tags: ["coordination"], posted: "2023-11-08", summary: "Fairfield, NJ. Runs scene-shop projects for Broadway, film/TV, museum, retail and experiential clients." },
       { title: "Associate Project Manager", url: "https://showfab.com/jobs/associate-project-manager/", tags: ["coordination"], posted: "2026-09-17", summary: "Fairfield, NJ. Supports project management at the main facility." }
     ],
     note: "Also hiring an Automation Integrator and Installer and a Lead Carpenter. General applications: jobs@showfab.com."
@@ -248,10 +243,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
   {
     name: "Handshake (AI training)", category: "Rhino + Grasshopper", website: "https://joinhandshake.com/",
     hq: "Remote (US)", careersUrl: "https://jobs.ashbyhq.com/handshake/8b910a1b-4694-4cf2-9f79-b751a0c3694a",
-    postings: [
-      { title: "Rhino 3D Modeler – AI Trainer (Contract)", url: "https://jobs.ashbyhq.com/handshake/8b910a1b-4694-4cf2-9f79-b751a0c3694a", tags: ["digital-modeling"], remote: true, flex: true, summary: "Remote, contract, asynchronous; often 5–20 hrs/week on active projects. Reviews AI-generated NURBS and freeform models. 3+ years of Rhino. $125/hr." }
-    ],
-    note: "Listed on several remote job boards (2026); Handshake's own posting page did not load for verification."
+    postings: [],
+    note: "Checked 2026-10-20: the role(s) listed here earlier have closed. Listed on several remote job boards (2026); Handshake's own posting page did not load for verification."
   },
 
   // ── CNC routing ──
@@ -340,10 +333,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
   {
     name: "TH Experiential", category: "Exhibit + Experience Design-Build", website: null,
     hq: "Remote (US)", careersUrl: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/",
-    postings: [
-      { title: "Senior 3D Experiential Designer", url: "https://www.remoterocketship.com/us/company/th-experiential/jobs/senior-3d-experiential-designer-united-states-remote/", tags: ["digital-modeling"], remote: true, posted: "2026-05-02", summary: "Remote, US. Spatial concepts, floor plans, elevations, 3D models and renderings for brand activations; manages fabrication vendors and installs. SketchUp, Rhino or 3ds Max. 2–6+ years." }
-    ],
-    note: "Seen on remote job boards (2026), not confirmed on a company careers page."
+    postings: [],
+    note: "Checked 2026-10-20: the role(s) listed here earlier have closed. Seen on remote job boards (2026), not confirmed on a company careers page."
   },
   {
     name: "Ferguson", category: "Product + Industrial Design", website: "https://www.ferguson.com/",
@@ -365,7 +356,6 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "McNeel Jobs & Portfolios Forum", category: "Remote + Freelance Board", website: "https://discourse.mcneel.com/",
     hq: "Remote", careersUrl: "https://discourse.mcneel.com/c/jobs-portfolios/35",
     postings: [
-      { title: "Rhino/Grasshopper Detailer – Curved FRP Windows & Doors", url: "https://discourse.mcneel.com/t/hiring-rhino-grasshopper-detailer/223154", tags: ["digital-modeling"], remote: true, flex: true, posted: "2026-09-30", summary: "Consultant. Rationalize and detail ~1,000 sf of curved glass windows and doors set into a fiberglass-over-foam wall: geometry rationalization, waterproofing details, fabrication-ready drawings. Advanced Rhino; Grasshopper preferred. Posted Sep 30, 2026, no replies yet." },
       { title: "Parametric Bargeboard Generator (UK joinery shop)", url: "https://discourse.mcneel.com/t/paid-parametric-bargeboard-generator-for-a-uk-joinery-workshop/222036", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-21", summary: "Paid freelance. A Grasshopper tool that generates decorative timber bargeboards from a few dimensions and outputs SVG/DXF cutting files and a setting-out schedule. Posted Aug 21, 2026." },
       { title: "Fiberglass Panel Cutting Stencils", url: "https://discourse.mcneel.com/t/rhino-grasshopper-specialist-needed-for-full-scale-cardboard-stencil/221591", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-07", summary: "Paid commission after a test piece. Flatten double-curved fiberglass panels into 1:1 cardboard stencils with registration marks; UnrollSrf, Squish, Grasshopper; DXF output. Posted Aug 7, 2026." },
       { title: "3D-Printed Casting Shell Automation", url: "https://discourse.mcneel.com/t/grasshopper-job/221415", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-03", summary: "Freelance. Grasshopper workflow that builds 3D-printed investment-casting shells from STEP parts: variable shell, split line, lugs, cores. Posted Aug 3, 2026." },
@@ -385,5 +375,5 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     hq: "Remote", careersUrl: "https://themedentertainmentjobs.com/jobs/?remote=true",
     postings: [],
     note: "Job board for themed, immersive and experiential work with a remote filter and a CAD/3D Design category."
-  },
+  }
 ];
