@@ -178,6 +178,8 @@
   .remote-hq { color: var(--ink-soft); font-size: 13px; max-width: 22ch; }
   .remote-summary { color: var(--ink-soft); font-size: 13px; max-width: 52ch; }
   .empty-note { padding: 40px 14px; text-align: center; color: var(--ink-faint); font-size: 13.5px; }
+  .academic-filters { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 4px 0 14px; }
+  .academic-intro { font-size: 13px; color: var(--ink-soft); max-width: 80ch; margin: 14px 0 10px; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--ink-faint); font-size: 12.5px; }
   footer a { color: var(--ink-soft); text-decoration-color: var(--line-strong); }
@@ -231,6 +233,7 @@
     <button class="tab-btn" data-panel="east">East Coast <span class="tab-count" id="east-tab-count">0</span></button>
     <button class="tab-btn" data-panel="west">West Coast <span class="tab-count" id="west-tab-count">0</span></button>
     <button class="tab-btn" data-panel="arch">Part-Time, Contract + Freelance <span class="tab-count" id="arch-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="academic">Academic <span class="tab-count" id="academic-tab-count">0</span></button>
   </div>
 
   <div class="tab-panel" id="panel-companies">
@@ -330,6 +333,39 @@
       </table>
     </div>
   </div>
+
+  <div class="tab-panel" id="panel-academic">
+    <p class="academic-intro">University and college jobs: makerspace and fab lab staff, CAD / Rhino / Revit teaching, and architecture + design faculty and campus design staff. Scanned October 20, 2026 from the Chronicle of Higher Education and Inside Higher Ed job boards; academic searches stay open for months, so check the apply-by date on each posting.</p>
+    <div class="academic-filters">
+      <div class="chip-group" id="academic-area-filters">
+        <button class="chip active" data-area="all">All areas</button>
+        <button class="chip" data-area="makerspace">Makerspace + fab lab</button>
+        <button class="chip" data-area="cad-teaching">CAD, Rhino + Revit teaching</button>
+        <button class="chip" data-area="architecture">Architecture + design</button>
+      </div>
+      <div class="chip-group" id="academic-region-filters">
+        <button class="chip active" data-region="all">All US</button>
+        <button class="chip" data-region="east">East Coast</button>
+      </div>
+    </div>
+    <p id="academic-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Institution <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="hq">Location <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
+            <th>Posting</th>
+          </tr>
+        </thead>
+        <tbody id="academic-table-body"></tbody>
+      </table>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -340,6 +376,7 @@
 </footer>
 
 <script src="data.js"></script>
+<script src="academic.js"></script>
 <script>
 (function () {
   const COMPANIES = window.__CREATIVE_FAB_COMPANIES__ || [];
@@ -515,8 +552,10 @@
     let localSortKey = 'posted';
     let localSortDir = -1;
 
+    const source = opts.source || ALL_FLAT_POSTINGS;
+
     function render() {
-      const rows = ALL_FLAT_POSTINGS.filter(filterFn).slice().sort((a, b) => {
+      const rows = source.filter(filterFn).slice().sort((a, b) => {
         let av, bv;
         if (localSortKey === 'posted' && !a.posted !== !b.posted) return a.posted ? -1 : 1;
         if (localSortKey === 'tags') { av = (a.tags || []).join(','); bv = (b.tags || []).join(','); }
@@ -553,7 +592,8 @@
     });
 
     render();
-    return ALL_FLAT_POSTINGS.filter(filterFn).length;
+    if (opts.bind) opts.bind(render);
+    return source.filter(opts.countFn || filterFn).length;
   }
 
   const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
@@ -575,6 +615,24 @@
     return p.flex === true || /project-based|freelance|hybrid|contract|part-time|temporary|on-call/i.test(p.title + ' ' + (p.summary || ''));
   }
   document.getElementById('arch-tab-count').textContent = makeFlatTab('arch', isFlexRole, { hasHq: true, emptyText: 'No part-time, contract or freelance positions found among the currently matched postings.' });
+
+  // Academic: university and college jobs from academic.js, kept out of the
+  // company tabs above. hq holds the job's own "City, ST" so coast works.
+  const ACADEMIC = (window.__ACADEMIC_JOBS__ || []).map(j => ({ ...j, company: j.institution, hq: j.where, coast: usCoast(j.where) }));
+  let activeArea = 'all', activeRegion = 'all', rerenderAcademic = () => {};
+  document.getElementById('academic-tab-count').textContent = makeFlatTab('academic',
+    p => (activeArea === 'all' || p.area === activeArea) && (activeRegion === 'all' || p.coast === activeRegion),
+    { hasHq: true, source: ACADEMIC, countFn: () => true, bind: r => { rerenderAcademic = r; },
+      emptyText: 'No academic positions match these filters.' });
+  [['academic-area-filters', 'area', v => { activeArea = v; }], ['academic-region-filters', 'region', v => { activeRegion = v; }]].forEach(([id, key, set]) => {
+    Array.from(document.querySelectorAll('#' + id + ' .chip')).forEach((btn, _, all) => {
+      btn.addEventListener('click', () => {
+        set(btn.dataset[key]);
+        all.forEach(b => b.classList.toggle('active', b === btn));
+        rerenderAcademic();
+      });
+    });
+  });
 
   function updateStats() {
     const withPostings = COMPANIES.filter(c => (c.postings || []).length > 0).length;
