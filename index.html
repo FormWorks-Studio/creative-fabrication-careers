@@ -174,7 +174,7 @@
   tbody tr.remote-row:hover { background: var(--accent-soft); }
   .remote-title a { text-decoration: none; font-weight: 600; }
   .remote-title a:hover { color: var(--accent); }
-  .remote-company { color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
+  .remote-company { color: var(--ink-soft); font-size: 13px; max-width: 22ch; }
   .remote-hq { color: var(--ink-soft); font-size: 13px; max-width: 22ch; }
   .remote-summary { color: var(--ink-soft); font-size: 13px; max-width: 52ch; }
   .empty-note { padding: 40px 14px; text-align: center; color: var(--ink-faint); font-size: 13.5px; }
@@ -192,6 +192,34 @@
     .stat b { font-size: 28px; }
     .cell-hq { display: none; }
     tr.detail-row td { padding-left: 16px; }
+  }
+
+  /* Position tables turn into stacked cards on narrow screens so every
+     field — including the posted date and link — fits without scrolling. */
+  .link-host { color: var(--ink-faint); font-size: 11.5px; }
+  @media (max-width: 1240px) {
+    table.flat-table { min-width: 0; }
+    .flat-table tbody td, .flat-table thead th { padding-left: 10px; padding-right: 10px; }
+    .flat-table .remote-summary { max-width: 34ch; }
+    .flat-table .remote-hq { max-width: 14ch; }
+    .flat-table .remote-company { max-width: 16ch; }
+    .flat-table .posting-tag { white-space: normal; }
+  }
+  @media (max-width: 1000px) {
+    table.flat-table { min-width: 0; }
+    .flat-table thead { display: none; }
+    .flat-table, .flat-table tbody, .flat-table tr, .flat-table td { display: block; width: 100%; }
+    .flat-table tr.remote-row { padding: 14px 16px 16px; }
+    .flat-table td { padding: 3px 0; max-width: none; white-space: normal; }
+    .flat-table td.remote-title { font-size: 15px; padding-bottom: 6px; }
+    .flat-table td[data-label]::before {
+      content: attr(data-label); display: inline-block; min-width: 72px; margin-right: 8px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--ink-faint);
+    }
+    .flat-table td.remote-summary::before { display: block; margin-bottom: 2px; }
+    .flat-table td.cell-link { padding-top: 8px; }
+    .flat-table td.empty-note { text-align: left; padding: 24px 16px; }
   }
 </style>
 </head>
@@ -266,7 +294,7 @@
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
             <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
-            <th>Posting</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody id="remote-table-body"></tbody>
@@ -286,7 +314,7 @@
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
             <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
-            <th>Posting</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody id="east-table-body"></tbody>
@@ -306,7 +334,7 @@
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
             <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
-            <th>Posting</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody id="west-table-body"></tbody>
@@ -326,7 +354,7 @@
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
             <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
-            <th>Posting</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody id="arch-table-body"></tbody>
@@ -359,7 +387,7 @@
             <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
             <th>Summary</th>
             <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
-            <th>Posting</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody id="academic-table-body"></tbody>
@@ -545,8 +573,17 @@
   function fmtDate(d) { return d ? `${MONTHS[+d.slice(5, 7) - 1]} ${+d.slice(8, 10)}, ${d.slice(0, 4)}` : ''; }
   function isFresh(d) { return !!d && (Date.now() - Date.parse(d)) / 864e5 <= 14; }
 
+  // Last column: the posting's own site, e.g. "jobs.chronicle.com ↗".
+  function linkCell(url) {
+    if (!url) return '<span class="none">—</span>';
+    let host = '';
+    try { host = new URL(url).hostname.replace(/^www\./, ''); } catch (e) {}
+    return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">Open posting ↗</a>${host ? `<br><span class="link-host">${escapeHtml(host)}</span>` : ''}`;
+  }
+
   function makeFlatTab(key, filterFn, opts) {
     const tbody = document.getElementById(key + '-table-body');
+    tbody.closest('table').classList.add('flat-table');
     const countEl = document.getElementById(key + '-result-count');
     const panel = document.getElementById('panel-' + key);
     let localSortKey = 'posted';
@@ -571,12 +608,12 @@
       tbody.innerHTML = rows.length ? rows.map(p => `
         <tr class="remote-row">
           <td class="remote-title">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>` : escapeHtml(p.title)}</td>
-          <td class="remote-company">${escapeHtml(p.company)}</td>
-          ${opts.hasHq ? `<td class="remote-hq">${escapeHtml(p.hq || '—')}</td>` : ''}
-          <td>${(p.tags || []).filter(t => TAG_META[t]).map(t => `<span class="posting-tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join(' ')}</td>
-          <td class="remote-summary">${escapeHtml(p.summary || '')}</td>
-          <td class="cell-posted${isFresh(p.posted) ? ' fresh' : ''}">${p.posted ? fmtDate(p.posted) : '<span class="none">—</span>'}</td>
-          <td class="cell-link">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Open ↗</a>` : `<span class="none">—</span>`}</td>
+          <td class="remote-company" data-label="${opts.companyLabel || 'Company'}">${escapeHtml(p.company)}</td>
+          ${opts.hasHq ? `<td class="remote-hq" data-label="${opts.hqLabel || 'Location'}">${escapeHtml(p.hq || '—')}</td>` : ''}
+          <td data-label="Type">${(p.tags || []).filter(t => TAG_META[t]).map(t => `<span class="posting-tag ${TAG_META[t].cls}">${TAG_META[t].label}</span>`).join(' ') || '<span class="none">—</span>'}</td>
+          <td class="remote-summary" data-label="Summary">${escapeHtml(p.summary || '')}</td>
+          <td class="cell-posted${isFresh(p.posted) ? ' fresh' : ''}" data-label="Posted">${p.posted ? fmtDate(p.posted) : '<span class="none">—</span>'}</td>
+          <td class="cell-link" data-label="Link">${linkCell(p.url)}</td>
         </tr>
       `).join('') : `<tr><td colspan="${colCount}" class="empty-note">${opts.emptyText}</td></tr>`;
     }
@@ -622,7 +659,7 @@
   let activeArea = 'all', activeRegion = 'all', rerenderAcademic = () => {};
   document.getElementById('academic-tab-count').textContent = makeFlatTab('academic',
     p => (activeArea === 'all' || p.area === activeArea) && (activeRegion === 'all' || p.coast === activeRegion),
-    { hasHq: true, source: ACADEMIC, countFn: () => true, bind: r => { rerenderAcademic = r; },
+    { hasHq: true, companyLabel: 'Institution', source: ACADEMIC, countFn: () => true, bind: r => { rerenderAcademic = r; },
       emptyText: 'No academic positions match these filters.' });
   [['academic-area-filters', 'area', v => { activeArea = v; }], ['academic-region-filters', 'region', v => { activeRegion = v; }]].forEach(([id, key, set]) => {
     Array.from(document.querySelectorAll('#' + id + ' .chip')).forEach((btn, _, all) => {
