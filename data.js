@@ -1,4 +1,4 @@
-// Creative fabrication studios and their open roles. Checked 2026-10-01; updated 2026-10-13; re-checked 2026-10-20.
+// Creative fabrication studios and their open roles. Checked 2026-10-01; updated 2026-10-13; re-checked 2026-10-20; remote roles added 2026-10-29.
 // Tags: digital-modeling = shop drawings + 3D, cnc = CNC, laser + 3D printing,
 // coordination = project + production management.
 // remote: true = fully remote; flex: true = project-based, freelance or hybrid.
@@ -246,6 +246,14 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     postings: [],
     note: "Checked 2026-10-20: the role(s) listed here earlier have closed. Listed on several remote job boards (2026); Handshake's own posting page did not load for verification."
   },
+  {
+    name: "Archive Owl", category: "Rhino + Grasshopper", website: "",
+    hq: "Los Angeles, CA", careersUrl: "https://archinect.com/jobs/entry/150569125/architectural-representation-specialist",
+    postings: [
+      { title: "Architectural Representation Specialist", url: "https://archinect.com/jobs/entry/150569125/architectural-representation-specialist", tags: ["digital-modeling"], remote: true, flex: true, posted: "2026-10-09", summary: "Remote, flexible part-time. As-built drawings, 3D scans and digital property records for an architect-led documentation studio." }
+    ],
+    note: "Added 2026-10-29 from Archinect's Remote listings."
+  },
 
   // ── CNC routing ──
   {
@@ -356,6 +364,8 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "McNeel Jobs & Portfolios Forum", category: "Remote + Freelance Board", website: "https://discourse.mcneel.com/",
     hq: "Remote", careersUrl: "https://discourse.mcneel.com/c/jobs-portfolios/35",
     postings: [
+      { title: "Production-Ready Marble Tables (Stone CNC)", url: "https://discourse.mcneel.com/t/rhino-modeler-production-ready-marble-objects/223889", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-10-25", summary: "Freelance, under NDA. Turn 10 concept designs (each in 3 sizes) into watertight Rhino solids split into slab and block parts for multi-axis stone CNC, plus dimensioned DWG/PDF drawings and a 4K turntable for each. Posted Oct 25, 2026." },
+      { title: "CAD Design Expert (Instructor), micro1", url: "https://discourse.mcneel.com/t/remote-cad-design-expert-instructor-40-90-hr/223673", tags: ["digital-modeling"], remote: true, flex: true, posted: "2026-10-16", summary: "Remote, flexible, hourly at $40–$90/hr. Teach and evaluate AI models on CAD workflows; Rhino/Grasshopper users welcome. Referral post from a micro1 partner, not micro1's own listing. Posted Oct 16, 2026." },
       { title: "Parametric Bargeboard Generator (UK joinery shop)", url: "https://discourse.mcneel.com/t/paid-parametric-bargeboard-generator-for-a-uk-joinery-workshop/222036", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-21", summary: "Paid freelance. A Grasshopper tool that generates decorative timber bargeboards from a few dimensions and outputs SVG/DXF cutting files and a setting-out schedule. Posted Aug 21, 2026." },
       { title: "Fiberglass Panel Cutting Stencils", url: "https://discourse.mcneel.com/t/rhino-grasshopper-specialist-needed-for-full-scale-cardboard-stencil/221591", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-07", summary: "Paid commission after a test piece. Flatten double-curved fiberglass panels into 1:1 cardboard stencils with registration marks; UnrollSrf, Squish, Grasshopper; DXF output. Posted Aug 7, 2026." },
       { title: "3D-Printed Casting Shell Automation", url: "https://discourse.mcneel.com/t/grasshopper-job/221415", tags: ["digital-modeling", "cnc"], remote: true, flex: true, posted: "2026-08-03", summary: "Freelance. Grasshopper workflow that builds 3D-printed investment-casting shells from STEP parts: variable shell, split line, lugs, cores. Posted Aug 3, 2026." },
