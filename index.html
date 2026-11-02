@@ -261,6 +261,7 @@
     <button class="tab-btn" data-panel="east">East Coast <span class="tab-count" id="east-tab-count">0</span></button>
     <button class="tab-btn" data-panel="west">West Coast <span class="tab-count" id="west-tab-count">0</span></button>
     <button class="tab-btn" data-panel="arch">Part-Time, Contract + Freelance <span class="tab-count" id="arch-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="makerspace">Makerspace <span class="tab-count" id="makerspace-tab-count">0</span></button>
     <button class="tab-btn" data-panel="academic">Academic <span class="tab-count" id="academic-tab-count">0</span></button>
   </div>
 
@@ -362,12 +363,45 @@
     </div>
   </div>
 
+  <div class="tab-panel" id="panel-makerspace">
+    <p class="academic-intro">Running or staffing a makerspace, fab lab or maker shop: technicians, lab managers and coordinators, and teaching roles built around 3D printers, laser cutters and CNC machines. Most are at universities and colleges for now. Scanned November 2, 2026 from the Chronicle of Higher Education and Inside Higher Ed job boards; check the apply-by date on each posting.</p>
+    <div class="academic-filters">
+      <div class="chip-group" id="makerspace-setting-filters">
+        <button class="chip active" data-setting="all">All settings</button>
+        <button class="chip" data-setting="university">University</button>
+        <button class="chip" data-setting="college">Community + technical college</button>
+        <button class="chip" data-setting="art-school">Art + design school</button>
+        <button class="chip" data-setting="library">Library</button>
+      </div>
+      <div class="chip-group" id="makerspace-region-filters">
+        <button class="chip active" data-region="all">All US</button>
+        <button class="chip" data-region="east">East Coast</button>
+      </div>
+    </div>
+    <p id="makerspace-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Employer <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="hq">Location <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="makerspace-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="tab-panel" id="panel-academic">
-    <p class="academic-intro">University and college jobs: makerspace and fab lab staff, CAD / Rhino / Revit teaching, and architecture + design faculty and campus design staff. Scanned October 20, 2026 from the Chronicle of Higher Education and Inside Higher Ed job boards; academic searches stay open for months, so check the apply-by date on each posting.</p>
+    <p class="academic-intro">University and college jobs: CAD / Rhino / Revit teaching and architecture + design faculty and campus design staff. Scanned October 20, 2026 from the Chronicle of Higher Education and Inside Higher Ed job boards; academic searches stay open for months, so check the apply-by date on each posting.</p>
     <div class="academic-filters">
       <div class="chip-group" id="academic-area-filters">
         <button class="chip active" data-area="all">All areas</button>
-        <button class="chip" data-area="makerspace">Makerspace + fab lab</button>
         <button class="chip" data-area="cad-teaching">CAD, Rhino + Revit teaching</button>
         <button class="chip" data-area="architecture">Architecture + design</button>
       </div>
@@ -405,6 +439,7 @@
 
 <script src="data.js"></script>
 <script src="academic.js"></script>
+<script src="makerspace.js"></script>
 <script>
 (function () {
   const COMPANIES = window.__CREATIVE_FAB_COMPANIES__ || [];
@@ -667,6 +702,24 @@
         set(btn.dataset[key]);
         all.forEach(b => b.classList.toggle('active', b === btn));
         rerenderAcademic();
+      });
+    });
+  });
+
+  // Makerspace: makerspace, fab lab and maker shop jobs from makerspace.js,
+  // filtered by setting (university, college, art school, library) and coast.
+  const MAKERSPACE = (window.__MAKERSPACE_JOBS__ || []).map(j => ({ ...j, company: j.org, hq: j.where, coast: usCoast(j.where) }));
+  let activeSetting = 'all', activeMakerRegion = 'all', rerenderMakerspace = () => {};
+  document.getElementById('makerspace-tab-count').textContent = makeFlatTab('makerspace',
+    p => (activeSetting === 'all' || p.setting === activeSetting) && (activeMakerRegion === 'all' || p.coast === activeMakerRegion),
+    { hasHq: true, companyLabel: 'Employer', source: MAKERSPACE, countFn: () => true, bind: r => { rerenderMakerspace = r; },
+      emptyText: 'No makerspace positions match these filters.' });
+  [['makerspace-setting-filters', 'setting', v => { activeSetting = v; }], ['makerspace-region-filters', 'region', v => { activeMakerRegion = v; }]].forEach(([id, key, set]) => {
+    Array.from(document.querySelectorAll('#' + id + ' .chip')).forEach((btn, _, all) => {
+      btn.addEventListener('click', () => {
+        set(btn.dataset[key]);
+        all.forEach(b => b.classList.toggle('active', b === btn));
+        rerenderMakerspace();
       });
     });
   });
