@@ -179,6 +179,7 @@
   .remote-summary { color: var(--ink-soft); font-size: 13px; max-width: 52ch; }
   .empty-note { padding: 40px 14px; text-align: center; color: var(--ink-faint); font-size: 13.5px; }
   .academic-filters { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 4px 0 14px; }
+  .np-heading { font-size: 15px; margin: 18px 0 4px; }
   .academic-intro { font-size: 13px; color: var(--ink-soft); max-width: 80ch; margin: 14px 0 10px; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--ink-faint); font-size: 12.5px; }
@@ -262,6 +263,7 @@
     <button class="tab-btn" data-panel="west">West Coast <span class="tab-count" id="west-tab-count">0</span></button>
     <button class="tab-btn" data-panel="arch">Part-Time, Contract + Freelance <span class="tab-count" id="arch-tab-count">0</span></button>
     <button class="tab-btn" data-panel="makerspace">Makerspace <span class="tab-count" id="makerspace-tab-count">0</span></button>
+    <button class="tab-btn" data-panel="nonprofit">Nonprofits <span class="tab-count" id="nonprofit-tab-count">0</span></button>
     <button class="tab-btn" data-panel="academic">Academic <span class="tab-count" id="academic-tab-count">0</span></button>
   </div>
 
@@ -397,6 +399,57 @@
     </div>
   </div>
 
+  <div class="tab-panel" id="panel-nonprofit">
+    <p class="academic-intro">Fabrication jobs at nonprofits: exhibit fabricators and preparators at museums and science centers, scene shop and technical crew at theaters and opera companies, public art production, and community makerspace staff. Most of these places post shop jobs only on their own site, so the directory below links straight to each careers page. Checked November 2, 2026.</p>
+    <div class="academic-filters">
+      <div class="chip-group" id="nonprofit-type-filters">
+        <button class="chip active" data-type="all">All nonprofits</button>
+        <button class="chip" data-type="museum">Museums + science centers</button>
+        <button class="chip" data-type="theater">Theater + opera</button>
+        <button class="chip" data-type="public-art">Public art</button>
+        <button class="chip" data-type="makerspace">Makerspaces</button>
+      </div>
+      <div class="chip-group" id="nonprofit-region-filters">
+        <button class="chip active" data-region="all">All US</button>
+        <button class="chip" data-region="east">East Coast</button>
+      </div>
+    </div>
+    <h3 class="np-heading">Open positions</h3>
+    <p id="nonprofit-result-count"></p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-flat-key="title">Position <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="company">Organization <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="hq">Location <span class="sort-arrow">↕</span></th>
+            <th data-flat-key="tags">Type <span class="sort-arrow">↕</span></th>
+            <th>Summary</th>
+            <th data-flat-key="posted" class="sorted">Posted <span class="sort-arrow">↕</span></th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="nonprofit-table-body"></tbody>
+      </table>
+    </div>
+    <h3 class="np-heading">Nonprofit fabrication employers</h3>
+    <p id="nonprofit-org-count"></p>
+    <div class="table-scroll">
+      <table class="flat-table">
+        <thead>
+          <tr>
+            <th>Organization</th>
+            <th>Kind</th>
+            <th>Location</th>
+            <th>Shop work</th>
+            <th>Careers page</th>
+          </tr>
+        </thead>
+        <tbody id="nonprofit-org-body"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="tab-panel" id="panel-academic">
     <p class="academic-intro">University and college jobs: CAD / Rhino / Revit teaching and architecture + design faculty and campus design staff. Scanned October 20, 2026 from the Chronicle of Higher Education and Inside Higher Ed job boards; academic searches stay open for months, so check the apply-by date on each posting.</p>
     <div class="academic-filters">
@@ -440,6 +493,7 @@
 <script src="data.js"></script>
 <script src="academic.js"></script>
 <script src="makerspace.js"></script>
+<script src="nonprofit.js"></script>
 <script>
 (function () {
   const COMPANIES = window.__CREATIVE_FAB_COMPANIES__ || [];
@@ -720,6 +774,40 @@
         set(btn.dataset[key]);
         all.forEach(b => b.classList.toggle('active', b === btn));
         rerenderMakerspace();
+      });
+    });
+  });
+
+  // Nonprofits: open jobs and an employer directory from nonprofit.js, both
+  // filtered by the same kind (museum, theater, public art, makerspace) and coast.
+  const NP_TYPES = { museum: 'Museum / science center', theater: 'Theater / opera', 'public-art': 'Public art', makerspace: 'Makerspace' };
+  const NP_JOBS = (window.__NONPROFIT_JOBS__ || []).map(j => ({ ...j, company: j.org, hq: j.where, coast: usCoast(j.where) }));
+  const NP_ORGS = (window.__NONPROFIT_ORGS__ || []).map(o => ({ ...o, coast: usCoast(o.where) }));
+  let activeNpType = 'all', activeNpRegion = 'all', rerenderNpJobs = () => {};
+  const npOk = p => (activeNpType === 'all' || p.type === activeNpType) && (activeNpRegion === 'all' || p.coast === activeNpRegion);
+  function renderNpOrgs() {
+    const rows = NP_ORGS.filter(npOk).sort((a, b) => a.name.localeCompare(b.name));
+    document.getElementById('nonprofit-org-count').textContent = `${rows.length} organization${rows.length === 1 ? '' : 's'}`;
+    document.getElementById('nonprofit-org-body').innerHTML = rows.length ? rows.map(o => `
+      <tr class="remote-row">
+        <td class="remote-title">${escapeHtml(o.name)}</td>
+        <td data-label="Kind">${escapeHtml(NP_TYPES[o.type] || '')}</td>
+        <td class="remote-hq" data-label="Location">${escapeHtml(o.where)}</td>
+        <td class="remote-summary" data-label="Shop work">${escapeHtml(o.note)}</td>
+        <td class="cell-link" data-label="Careers">${linkCell(o.url).replace('Open posting', 'Careers page')}</td>
+      </tr>`).join('') : '<tr><td colspan="5" class="empty-note">No organizations match these filters.</td></tr>';
+  }
+  document.getElementById('nonprofit-tab-count').textContent = makeFlatTab('nonprofit', npOk,
+    { hasHq: true, companyLabel: 'Organization', source: NP_JOBS, countFn: () => true, bind: r => { rerenderNpJobs = r; },
+      emptyText: 'No open nonprofit positions match these filters right now; try the directory below.' });
+  renderNpOrgs();
+  [['nonprofit-type-filters', 'type', v => { activeNpType = v; }], ['nonprofit-region-filters', 'region', v => { activeNpRegion = v; }]].forEach(([id, key, set]) => {
+    Array.from(document.querySelectorAll('#' + id + ' .chip')).forEach((btn, _, all) => {
+      btn.addEventListener('click', () => {
+        set(btn.dataset[key]);
+        all.forEach(b => b.classList.toggle('active', b === btn));
+        rerenderNpJobs();
+        renderNpOrgs();
       });
     });
   });
