@@ -278,14 +278,20 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     name: "Formlabs", category: "3D Printing", website: "https://formlabs.com/",
     hq: "Somerville, MA", careersUrl: "https://careers.formlabs.com/",
     postings: [
+      { title: "3D Digital Manufacturing Technician", url: "https://careers.formlabs.com/job/7996435/apply/?gh_jid=7996435", tags: ["cnc", "digital-modeling"], posted: "2026-06-10", summary: "Billerica, MA. Runs Formlabs printers in its digital manufacturing (print-on-demand) operation. Works with 3D printing, CAD/CAM." },
+      { title: "3D Print Production Associate", url: "https://careers.formlabs.com/job/8119602/apply/?gh_jid=8119602", tags: ["cnc"], posted: "2026-08-10", summary: "Billerica, MA. Production floor role printing and post-processing parts. Works with 3D printing." },
+      { title: "3D Print Production Associate - 2nd Shift", url: "https://careers.formlabs.com/job/8246892/apply/?gh_jid=8246892", tags: ["cnc"], posted: "2026-10-01", summary: "Billerica, MA. Second-shift print production and post-processing. Works with 3D printing." },
+      { title: "FN - 3D Printing Floor Team Lead", url: "https://careers.formlabs.com/job/8048289/apply/?gh_jid=8048289", tags: ["cnc", "coordination"], posted: "2026-07-07", summary: "Billerica, MA. Leads a 3D printing production floor team. Works with 3D printing." },
+      { title: "Makerspace Fellow (Winter/Spring 2027)", url: "https://careers.formlabs.com/job/8315981/apply/?gh_jid=8315981", tags: ["cnc", "digital-modeling"], posted: "2026-10-27", summary: "Somerville, MA. Fellowship running Formlabs' in-house makerspace and helping staff build projects. Works with 3D printing, lasers, CAD/CAM." },
+      { title: "Makerspace Fellow (Winter/Spring 2027)", url: "https://careers.formlabs.com/job/8328598/apply/?gh_jid=8328598", tags: ["cnc", "digital-modeling"], posted: "2026-10-27", summary: "Milwaukee, WI. Fellowship running Formlabs' in-house makerspace and helping staff build projects. Works with 3D printing, lasers, CAD/CAM." },
+      { title: "Engineering Technician", url: "https://careers.formlabs.com/job/8327414/apply/?gh_jid=8327414", tags: ["cnc"], posted: "2026-10-27", summary: "Boston, MA. Hands-on engineering lab support for printer development. Works with 3D printing." },
       { title: "Print Production Specialist", url: "https://careers.formlabs.com/job/8265603/apply/?gh_jid=8265603", tags: ["cnc"], posted: "2026-10-08", summary: "Perrysburg, OH. Production role on Formlabs' 3D print production floor." },
       { title: "Industrial Designer", url: "https://careers.formlabs.com/job/8249032/apply/?gh_jid=8249032", tags: ["digital-modeling"], posted: "2026-10-02", summary: "Somerville, MA. Industrial design on Formlabs' 3D printers and accessories." },
       { title: "Senior Industrial Designer", url: "https://careers.formlabs.com/job/8249021/apply/?gh_jid=8249021", tags: ["digital-modeling"], posted: "2026-10-02", summary: "Somerville, MA. Senior industrial design role on Formlabs' 3D printers and accessories." },
-      { title: "3D Print Optimization Engineer", url: "https://careers.formlabs.com/job/8238369/apply/?gh_jid=8238369", tags: ["cnc"], posted: "2026-09-28", summary: "Somerville, MA, on site. Tunes print settings and processes for Formlabs printers." },
       { title: "3D Print Technician", url: "https://careers.formlabs.com/job/8241507/apply/?gh_jid=8241507", tags: ["cnc"], posted: "2026-09-29", summary: "Somerville, MA, on site. Runs and maintains printers and print jobs." },
       { title: "Product Support Specialist (3D Printing)", url: "https://careers.formlabs.com/job/8089668/apply/?gh_jid=8089668", tags: ["cnc"], posted: "2026-07-27", summary: "Milwaukee, WI, on site. Supports customers with printing questions and troubleshooting." }
     ],
-    note: "Checked 2026-10-01 (223 open roles). Formlabs' remote roles are all field and support jobs in Europe; none in the US."
+    note: "Checked 2026-11-02 (236 open roles). Formlabs' remote roles are all field and support jobs in Europe; none in the US."
   },
   {
     name: "Xometry", category: "3D Printing", website: "https://www.xometry.com/",
@@ -385,5 +391,33 @@ window.__CREATIVE_FAB_COMPANIES__ = [
     hq: "Remote", careersUrl: "https://themedentertainmentjobs.com/jobs/?remote=true",
     postings: [],
     note: "Job board for themed, immersive and experiential work with a remote filter and a CAD/3D Design category."
+  },
+  {
+    name: "LAIKA", category: "CNC Routing", website: "https://www.laika.com/",
+    hq: "Hillsboro, OR", careersUrl: "https://job-boards.greenhouse.io/laika",
+    postings: [
+      { title: "CNC Programmer", url: "https://www.laika.com/careers/job-listing?jobid=8110259&gh_jid=8110259", tags: ["cnc", "digital-modeling"], posted: "2026-08-26", summary: "Hillsboro, OR. Programs CNC machining for puppets, sets and props at the stop-motion animation studio. Works with CNC, CAD/CAM." }
+    ],
+    note: "Stop-motion animation studio (Coraline, Kubo) with large in-house puppet, set and rapid-prototyping shops. Added 2026-11-02."
+  },
+  {
+    name: "Reframe Systems", category: "CNC Routing", website: "https://www.reframe.systems/",
+    hq: "Billerica, MA", careersUrl: "https://jobs.ashbyhq.com/reframesystems",
+    postings: [
+      { title: "CNC Operator", url: "https://jobs.ashbyhq.com/reframesystems/0f62b84b-46d6-44a1-8129-aa30cac54b22", tags: ["cnc"], posted: "2026-08-25", summary: "Billerica, MA. Runs CNC equipment in a robotic prefab-housing factory. Works with CNC, robotics." },
+      { title: "Cabinet CNC Operator", url: "https://jobs.ashbyhq.com/reframesystems/8828270c-a114-4c62-aba9-c35e947b6a45", tags: ["cnc"], posted: "2026-09-21", summary: "Billerica, MA. Cuts cabinet and millwork parts on CNC for factory-built homes. Works with CNC, robotics." },
+      { title: "Machine Shop Manager", url: "https://jobs.ashbyhq.com/reframesystems/5e98d2bc-466c-495b-a80f-f30c7cf324e2", tags: ["cnc", "coordination"], posted: "2026-07-28", summary: "Billerica, MA. Runs the in-house machine shop building tooling for robotic home construction. Works with 3D printing, lasers, robotics. $85K – $115K." }
+    ],
+    note: "Robotic micro-factory building prefab homes; CNC, cabinet and machine-shop roles. Added 2026-11-02."
+  },
+  {
+    name: "Protolabs", category: "CNC Routing", website: "https://www.protolabs.com/",
+    hq: "Maple Plain, MN (CNC plant in Nashua, NH)", careersUrl: "https://jobs.lever.co/protolabs",
+    postings: [
+      { title: "CNC Programmer (Third Shift)", url: "https://jobs.lever.co/protolabs/259bb803-4aa0-4cf4-8f69-fd3c693fae6b", tags: ["cnc", "digital-modeling"], posted: "2026-10-28", summary: "Nashua, NH. Programs quick-turn CNC prototype parts. Works with CNC, CAD/CAM." },
+      { title: "CNC Support Technician (2nd Shift)", url: "https://jobs.lever.co/protolabs/75f6d0d5-2021-41bf-80a9-b311656e899d", tags: ["cnc"], posted: "2026-09-28", summary: "Nashua, NH. Supports CNC machining cells for quick-turn prototypes. Works with CNC." },
+      { title: "CNC Operator (First Shift)", url: "https://jobs.lever.co/protolabs/1ee21513-88ef-4816-9256-7e032dea9d05", tags: ["cnc"], posted: "2026-09-17", summary: "Nashua, NH. Runs CNC machines making quick-turn prototype parts. Works with CNC." }
+    ],
+    note: "Digital manufacturer for quick-turn prototypes: CNC machining, 3D printing and molding. Listed roles are at the Nashua, NH CNC plant. Added 2026-11-02."
   }
 ];
